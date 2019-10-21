@@ -5,14 +5,16 @@ import List from '../components/List';
 class Home extends Component {
   render() {
     return (
-      <div className="container">
-      <MobileMenu/>
-      <div className="wrapper">
-        <Menu/>
-        <div id="content" className="container-fluid">
-          <List />
+      <div className="home">
+        <div>
+        <MobileMenu />
         </div>
-      </div>
+        <div className="home-page">
+          <Menu />
+          <div id="content" className="home-content">
+            <List />
+          </div>
+        </div>
       </div>
     );
   }

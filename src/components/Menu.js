@@ -1,13 +1,12 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
 import './Menu.css';
 
 
 class Menu extends Component {
     render() {
         return (
-            <nav id="sidebar">
-                <ul className="list-unstyled components">
+            <div id="sidebar">
+                <ul className="">
                     <li>
                         <a href="#">Fruits and Vegetables</a>
                     </li>
@@ -24,7 +23,7 @@ class Menu extends Component {
                         <a href="#">Baby Care</a>
                     </li>
                 </ul>
-            </nav>
+            </div>
         );
     }
 }

@@ -1,30 +1,29 @@
 import React, { Component } from 'react';
+import './Header.css';
 
 class Header extends Component {
     render() {
         return (
-            <header>
-                <div className="bg-white shadow-sm rounded mainheader">
-                    <div className="leftitem">
+            <header className="app-header">
+                    <div className="header-brand">
                         <a href="#">
                             <img src="http://placehold.it/150x50?text=Logo" alt=""></img>
                         </a>
 
-                        <span>
+                        <span className="header-links">
                             <a href="/home">Home</a>
                             <a href="/products">Products</a>
                         </span>
                     </div>
 
-                    <div className="ml-auto">
-                        <span className="">
+                    <div className="header-basket">
+                        <span className="header-links">
                             <a href="#">SignIn</a>
                             <a href="#">Register</a>
                         </span>
                         <img className="" src="http://placehold.it/150x50?text=Logo" alt="">
                         </img>
                     </div>
-                </div>
             </header>
 
         );

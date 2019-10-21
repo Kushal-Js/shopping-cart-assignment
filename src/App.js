@@ -10,7 +10,7 @@ import './App.css';
 class App extends Component {
   render() {
     const App = () => (
-      <div>
+      <div className="app">
         <Header />
         <Switch>
           <Route exact path='/' component={Login} />
@@ -22,7 +22,7 @@ class App extends Component {
     )
     return (
       <BrowserRouter>
-        <App className="container-fluid" />
+        <App/>
       </BrowserRouter>
     );
   }
