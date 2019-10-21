@@ -32,8 +32,8 @@ class MobileMenu extends Component {
     render() {
         return (
             <div id="menu-mobile">
-                <div className="mobilebox">
-                    <a href="#" className="items">Fruits and Vegetables</a>
+                <div className="">
+                    <a href="#" className="">Fruits and Vegetables</a>
                     <i className="fa fa-angle-down icon" data-toggle="collapse" data-target="#navbarCollapse2"> </i>
                 </div>
 
