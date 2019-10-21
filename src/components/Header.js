@@ -6,8 +6,8 @@ class Header extends Component {
         return (
             <header className="app-header">
                     <div className="header-brand">
-                        <a href="#">
-                            <img src="http://placehold.it/150x50?text=Logo" alt=""></img>
+                        <a href="/home">
+                            <img src="./static/images/logo.png" alt=""></img>
                         </a>
 
                         <span className="header-links">
@@ -18,11 +18,11 @@ class Header extends Component {
 
                     <div className="header-basket">
                         <span className="header-links">
-                            <a href="#">SignIn</a>
-                            <a href="#">Register</a>
+                            <a href="/login">SignIn</a>
+                            <a href="/register">Register</a>
                         </span>
-                        <img className="" src="http://placehold.it/150x50?text=Logo" alt="">
-                        </img>
+                        <img src="./static/images/cart.svg" alt=""></img>
+                        <span>0 items</span>
                     </div>
             </header>
 
