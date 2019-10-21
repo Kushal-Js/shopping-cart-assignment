@@ -5,25 +5,15 @@ import './Menu.css';
 class Menu extends Component {
     render() {
         return (
-            <div id="sidebar">
-                <ul className="">
-                    <li>
-                        <a href="#">Fruits and Vegetables</a>
-                    </li>
-                    <li>
-                        <a href="#">Bakery cakes and Dairy</a>
-                    </li>
-                    <li>
-                        <a href="#">Beverages</a>
-                    </li>
-                    <li>
-                        <a href="#">Beauty and Hygiene</a>
-                    </li>
-                    <li>
-                        <a href="#">Baby Care</a>
-                    </li>
-                </ul>
-            </div>
+            <aside className="main-nav" id="main-nav">
+
+                <span><a href="#">Fruits and Vegetables</a></span>
+                <span><a href="#">Bakery cakes and Dairy</a></span>
+                <span><a href="#">Beverages</a></span>
+                <span><a href="#">Beauty and Hygiene</a></span>
+                <span><a href="#">Baby Care</a></span>
+
+            </aside>
         );
     }
 }
@@ -31,20 +21,22 @@ class Menu extends Component {
 class MobileMenu extends Component {
     render() {
         return (
-            <div id="menu-mobile">
-                <div className="">
-                    <a href="#" className="">Fruits and Vegetables</a>
-                    <i className="fa fa-angle-down icon" data-toggle="collapse" data-target="#navbarCollapse2"> </i>
-                </div>
+            <header className="main-head" id="main-head">
+                <div id="menu-mobile">
+                    <div className="menu-mobile-brand">
+                        <a href="#" className="items">Fruits and Vegetables</a>
+                        <i className="fa fa-angle-down icon" data-toggle="collapse" data-target="#navbarCollapse"> </i>
+                    </div>
 
-                <div className="collapse navbar-collapse" id="navbarCollapse2">
-                    <div className="navbar-nav">
-                        <a href="#">Bakery cakes and Dairy</a>
-                        <a href="#">Beverages</a>
-                        <a href="#">Baby Care</a>
+                    <div className="collapse navbar-collapse" id="navbarCollapse">
+                        <div className="navbar-nav">
+                            <a href="#">Bakery cakes and Dairy</a>
+                            <a href="#">Beverages</a>
+                            <a href="#">Baby Care</a>
+                        </div>
                     </div>
                 </div>
-            </div>
+            </header>
         );
     }
 }

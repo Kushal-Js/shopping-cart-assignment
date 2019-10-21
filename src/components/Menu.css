@@ -1,0 +1,23 @@
+.main-head {
+    background-color: brown;
+    padding: 10px;
+    grid-area: header;
+  }
+
+  .menu-mobile-brand {
+      display: grid;
+      grid-template-columns: auto auto;  /* grid has two columns; content defines width */
+      justify-content: space-between;    /* horizontal alignment of grid tracks */
+      align-content: space-between;      /* vertical alignment of grid tracks */
+  }
+  .content {
+    grid-area: content;
+  }
+  .main-nav {
+    background-color: beige;
+    grid-area: nav;
+  }
+
+  .main-nav span {
+    border-bottom: 1px solid black;
+  }

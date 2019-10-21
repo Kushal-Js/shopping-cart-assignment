@@ -8,18 +8,6 @@
       "content";
   }
 
-  .main-head {
-    background-color: brown;
-    grid-area: header;
-  }
-  .content {
-    grid-area: content;
-  }
-  .main-nav {
-    background-color: beige;
-    grid-area: nav;
-  }
-
   @media screen and (max-width: 600px) {
     #main-nav {
         display: none;
@@ -28,7 +16,7 @@
         display: block;
     }
     .wrapper {
-        grid-template-columns: 4fr;
+        grid-template-columns: 5fr;
         grid-template-areas: 
           "header  header"
           "content  content"
