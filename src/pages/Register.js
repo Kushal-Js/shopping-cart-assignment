@@ -5,24 +5,38 @@ import './Login.css';
 class Login extends Component {
   render() {
     return (
-      <div className="loginContainer container row">
-        <div className="loginTextContainer col-md-6">
-          <h1>Login</h1>
-          <span>Get access to your Orders, Wishlist and Recommendations</span>
+      <div className="login-container">
+
+        <div className="login-info">
+          <span className="login-text"><h1>Signup</h1></span>
+          <span>We don not share your persoanl details with anyone.</span>
         </div>
-        <form method="post" action="/home" className="contact-form col-md-6">
-          <div id="emailContainer" className="inputContainer">
+
+        <form method="post" action="/home" className="login-form">
+        <div id="emailContainer" className="login-input">
+            <label htmlFor="email">First Name</label>
+            <input type="email" id="email" name="email" placeholder="" required />
+          </div>
+          <div id="emailContainer" className="login-input">
+            <label htmlFor="email">Last Name</label>
+            <input type="email" id="email" name="email" placeholder="" required />
+          </div>
+          <div id="emailContainer" className="login-input">
             <label htmlFor="email">Email</label>
             <input type="email" id="email" name="email" placeholder="" required />
           </div>
-
-          <div id="pswdContainer" className="inputContainer">
+          <div id="pswdContainer" className="login-input">
             <label htmlFor="password">Password</label>
-            <input type="password" id="password" placeholder="" required />
+            <input type="password" id="password" placeholder="" />
+          </div>
+          <div id="pswdContainer" className="login-input">
+            <label htmlFor="password">Confirm Password</label>
+            <input type="password" id="password" placeholder="" />
           </div>
 
-          <button type="submit">Login</button>
+          <button className="login-button" type="submit">Signup</button>
         </form>
+
       </div>
     )
   }

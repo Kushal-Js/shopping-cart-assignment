@@ -19,7 +19,6 @@ class List extends Component {
     fetch('http://localhost:8080/api/categories')
       .then(res => res.json())
       .then((res) => {
-        console.log('test', res);
         this.setState({ categories: res })
       })
   }

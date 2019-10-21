@@ -1,43 +1,14 @@
-
-  .wrapper {
+.home-wrapper {
     display: grid;
-    grid-gap: 20px;
-    grid-template-areas: 
-      "header"
-      "nav"
-      "content";
-  }
+    grid-auto-flow: row;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
 
-  @media screen and (max-width: 600px) {
-    #main-nav {
-        display: none;
-    }
-    #main-head {
-        display: block;
-    }
-    .wrapper {
-        grid-template-columns: 5fr;
-        grid-template-areas: 
-          "header  header"
-          "content  content"
-      }
-  }
-
-  @media only screen and (min-width: 600px)  {
-      #main-nav {
-          display: block;
-      }
-      #main-head {
-          display: none;
-      }
-    .wrapper {
-        grid-template-columns: 1fr 4fr;
-        grid-template-areas: 
-          "header header"
-          "nav    content"
-       }
-       aside span {
-           display: flex;
-           flex-direction: column;
-       }
-  }
+.home-wrapper article {
+    padding: 10px;
+    -webkit-box-shadow: 1px 1px 1px 1px #ccc;  /* Safari 3-4, iOS 4.0.2 - 4.2, Android 2.3+ */
+    -moz-box-shadow:    1px 1px 1px 1px #ccc;  /* Firefox 3.5 - 3.6 */
+    box-shadow:         1px 1px 1px 1px #ccc;  /* Opera 10.5, IE 9, Firefox 4+, Chrome 6+, iOS 5 */
+}
