@@ -31,15 +31,16 @@ class List extends Component {
       <main className="list">
         {categories.map((item) => {
           return (
-        <article  key={item.key}>
-          <img src={item.imageUrl} alt="Sample photo"></img>
-          <div className="text">
-            <h3>{item.description}</h3>
-            <p>{item.order}</p>
-            <button>Here's why</button>
-          </div>
-        </article>
-          )})}
+            <article key={item.key}>
+              <img src={`.`+item.imageUrl} alt="Sample photo"></img>
+              <div className="text">
+                <h3>{item.description}</h3>
+                <p>{item.order}</p>
+                <button>Here's why</button>
+              </div>
+            </article>
+          )
+        })}
       </main>
     );
   }
