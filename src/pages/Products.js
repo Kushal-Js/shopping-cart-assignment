@@ -22,6 +22,7 @@ class Products extends Component {
     fetch('http://localhost:8080/api/products')
       .then(res => res.json())
       .then((res) => {
+        console.log('yes', res);
         this.setState({ products: res })
       })
   }

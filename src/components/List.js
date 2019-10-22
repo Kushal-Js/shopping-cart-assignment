@@ -11,7 +11,7 @@ class List extends Component {
         {products.map((item) => {
           return (
             <article key={item.key}>
-              <img src={`.`+item.imageUrl} alt="Sample photo"></img>
+              <img src={`.`+item.imageUrl} alt=""></img>
               <div className="text">
                 <h3>{item.name}</h3>
                 <p>{item.description}</p>
@@ -26,26 +26,3 @@ class List extends Component {
 }
 
 export default List;
-
-{/* <div>
-{categories.length ? (
-  <div className="d-flex flex-row flex-wrap">
-    {categories.map((item) => {
-      return (
-        <div className="card card-block col-md-3" key={item.key}>
-          <div className="card-body">
-            <h5 className="card-title">{item.description}</h5>
-            <h6 className="card-subtitle mb-2 text-muted">{item.order}</h6>
-            <img src={`.../public`+item.imageUrl}></img>
-          </div>
-        </div>
-      );
-    })}
-  </div>
-) : (
-    <div>
-      <h2>No List Items Found</h2>
-    </div>
-  )
-}
-</div> */}

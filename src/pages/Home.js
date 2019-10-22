@@ -35,7 +35,7 @@ class Home extends Component {
         {categories.map((item) => {
           return (
             <article key={item.key}>
-              <img src={`.` + item.imageUrl} alt="Sample photo"></img>
+              <img src={`.` + item.imageUrl} alt=""></img>
               <div className="text">
                 <h3>{item.name}</h3>
                 <p>{item.description}</p>
@@ -49,7 +49,7 @@ class Home extends Component {
   }
 
   navigate(){
-    
+    this.props.history.push("/products");
   }
 }
 export default Home;

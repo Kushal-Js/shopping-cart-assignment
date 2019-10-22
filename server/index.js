@@ -21,11 +21,11 @@ app.get('/api/categories', (req, res) => {
 });
 
 app.get('/api/products', (req, res) => {
-    const category = req.param;
-    const filteredProducts = products.filter((product, category) => {
-        if category === null ? return product.category === category: return product;
-    })
-    res.json(filteredProducts);
+    // const category = req.param;
+    // const filteredProducts = products.filter((product, category) => {
+    //     if category === null ? return product.category === category: return product;
+    // })
+    res.json(products);
 });
 
 app.get('/api/banners', (req, res) => {

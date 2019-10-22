@@ -7,20 +7,20 @@ class Header extends Component {
         return (
             <header className="app-header">
                     <div className="header-brand">
-                        <Link href="/home">
+                        <Link to="/home">
                             <img src="./static/images/logo.png" alt=""></img>
                         </Link>
 
                         <span className="header-links">
-                            <Link href="/home">Home</Link>
-                            <Link href="/products">Products</Link>
+                            <Link to="/home">Home</Link>
+                            <Link to="/products">Products</Link>
                         </span>
                     </div>
 
                     <div className="header-basket">
                         <span className="header-links">
-                            <Link href="/login">SignIn</Link>
-                            <Link href="/register">Register</Link>
+                            <Link to="/login">SignIn</Link>
+                            <Link to="/register">Register</Link>
                         </span>
                         <img src="./static/images/cart.svg" alt=""></img>
                         <span>0 items</span>
