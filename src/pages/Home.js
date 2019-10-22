@@ -29,23 +29,27 @@ class Home extends Component {
 
     return (
       <div className="home-wrapper">
-        <article>
+        <div>
           <ImageSlider />
-        </article>
+        </div>
         {categories.map((item) => {
           return (
             <article key={item.key}>
               <img src={`.` + item.imageUrl} alt="Sample photo"></img>
               <div className="text">
-                <h3>{item.description}</h3>
-                <p>{item.order}</p>
-                <button>Here's why</button>
+                <h3>{item.name}</h3>
+                <p>{item.description}</p>
+                <button onClick={this.navigate.bind(this)}>{`Explore `+ item.name}</button>
               </div>
             </article>
           )
         })}
       </div>
     );
+  }
+
+  navigate(){
+    
   }
 }
 export default Home;

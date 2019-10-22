@@ -58,7 +58,7 @@ class ImageSlider extends Component {
       return (
         <div className="slider">
   
-          <div className="slider-wrapper"
+          <article className="slider-wrapper"
             style={{
               transform: `translateX(${this.state.translateValue}px)`,
               transition: 'transform ease-out 0.45s'
@@ -68,7 +68,7 @@ class ImageSlider extends Component {
                   <Slide key={i} image={`.`+image.bannerImageUrl} />
                 ))
               }
-          </div>
+          </article>
   
           <LeftArrow
            goToPrevSlide={this.goToPrevSlide}

@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Link } from "react-router-dom"
 import './Header.css';
 
 class Header extends Component {
@@ -6,20 +7,20 @@ class Header extends Component {
         return (
             <header className="app-header">
                     <div className="header-brand">
-                        <a href="/home">
+                        <Link href="/home">
                             <img src="./static/images/logo.png" alt=""></img>
-                        </a>
+                        </Link>
 
                         <span className="header-links">
-                            <a href="/home">Home</a>
-                            <a href="/products">Products</a>
+                            <Link href="/home">Home</Link>
+                            <Link href="/products">Products</Link>
                         </span>
                     </div>
 
                     <div className="header-basket">
                         <span className="header-links">
-                            <a href="/login">SignIn</a>
-                            <a href="/register">Register</a>
+                            <Link href="/login">SignIn</Link>
+                            <Link href="/register">Register</Link>
                         </span>
                         <img src="./static/images/cart.svg" alt=""></img>
                         <span>0 items</span>
