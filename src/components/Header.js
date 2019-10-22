@@ -1,8 +1,14 @@
 import React, { Component } from 'react';
-import { Link } from "react-router-dom"
+import { Link } from "react-router-dom";
+import Cart from '../components/Cart';
 import './Header.css';
 
 class Header extends Component {
+    constructor(props) {
+        super(props);
+      }
+    
+
     render() {
         return (
             <header className="app-header">
@@ -22,12 +28,13 @@ class Header extends Component {
                             <Link to="/login">SignIn</Link>
                             <Link to="/register">Register</Link>
                         </span>
-                        <img src="./static/images/cart.svg" alt=""></img>
+                        <img src="./static/images/cart.svg" alt="" data-toggle="modal" data-target="#myModal"></img>
                         <span>0 items</span>
                     </div>
+                    <Cart/>
             </header>
-
         );
     }
 }
+
 export default Header;
