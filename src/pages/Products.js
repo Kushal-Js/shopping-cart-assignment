@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import axios from 'axios';
 import { Menu, MobileMenu } from '../components/Menu';
 import List from '../components/List';
 import './Products.css';
@@ -8,8 +9,7 @@ class Products extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      products: [],
-      catId : this.props.match.params.id
+      products: []
     }
   }
   
@@ -17,14 +17,17 @@ class Products extends Component {
     this.getList();
   }
   
-  // Retrieves the list of items from the Express app
   getList = () => {
-    fetch('http://localhost:8080/api/products')
-      .then(res => res.json())
+    const catId = this.props.location.state;
+    axios.get('http://localhost:8080/api/products', {params:catId})
       .then((res) => {
-        console.log('yes', res);
-        this.setState({ products: res })
+        this.setState({ products: res.data })
       })
+  }
+
+  simplifiedFunction = (catId) => {
+    axios.get('http://localhost:8080/api/products', {params:{catId}})
+      .then((res) => this.setState({ products: res.data }))
   }
 
   render() {
@@ -33,9 +36,9 @@ class Products extends Component {
     return (
       <div className="wrapper">
 
-        <MobileMenu />
+        <MobileMenu simplifiedFunction = {this.simplifiedFunction} />
 
-        <Menu />
+        <Menu simplifiedFunction = {this.simplifiedFunction} />
 
         <article className="content">
           <List products={products}/>

@@ -3,11 +3,7 @@ import { Link } from "react-router-dom";
 import Cart from '../components/Cart';
 import './Header.css';
 
-class Header extends Component {
-    constructor(props) {
-        super(props);
-      }
-    
+class Header extends Component {    
 
     render() {
         return (

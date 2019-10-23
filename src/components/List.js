@@ -10,7 +10,7 @@ class List extends Component {
       <main className="list">
         {products.map((item) => {
           return (
-            <article key={item.key}>
+            <article key={item.id}>
               <img src={`.`+item.imageURL} alt=""></img>
               <div className="text">
                 <h3>{item.name}</h3>

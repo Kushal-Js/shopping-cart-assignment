@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import { withRouter } from "react-router-dom";
+import axios from 'axios';
 import ImageSlider from '../components/ImageSlider';
 import './Home.css';
 
@@ -9,18 +11,17 @@ class Home extends Component {
     this.state = {
       categories: []
     }
+    this.navigate = this.navigate.bind(this);
   }
 
   componentDidMount() {
     this.getList();
   }
 
-  // Retrieves the list of items from the Express app
   getList = () => {
-    fetch('http://localhost:8080/api/categories')
-      .then(res => res.json())
+    axios.get('http://localhost:8080/api/categories')
       .then((res) => {
-        this.setState({ categories: res })
+        this.setState({ categories: res.data })
       })
   }
 
@@ -39,17 +40,17 @@ class Home extends Component {
               <div className="text">
                 <h3>{item.name}</h3>
                 <p>{item.description}</p>
-                <button onClick={this.navigate.bind(this)}>{`Explore `+ item.name}</button>
+                <button onClick={() => this.navigate(item.id)} type="button">{`Explore `+ item.name}</button>
               </div>
             </article>
           )
         })}
-      </div>
+      </div>  
     );
   }
 
-  navigate(){
-    this.props.history.push("/products");
+  navigate(catId) {
+    this.props.history.push('/products', {catId});
   }
 }
-export default Home;
+export default withRouter(Home);

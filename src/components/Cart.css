@@ -1,0 +1,25 @@
+.modal-header {
+    background-color: black !important;
+}
+
+.modal-body {
+    display: grid;
+    grid-template-columns: auto;
+    justify-content: stretch;
+    align-content: stretch;
+    width: auto;
+    height: 400px;
+    background-color: cornsilk;
+}
+
+.fas {
+    font-size:48px;
+    color: #fff;
+}
+
+.modal-footer {
+    display: grid;
+    grid-template-rows: auto;
+    justify-content: stretch;
+    background-color: white;
+}
