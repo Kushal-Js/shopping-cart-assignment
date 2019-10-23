@@ -1,17 +1,72 @@
+
 .modal-header {
-    background-color: black !important;
+    background-color: black;
 }
+
+.modal-content{
+    background-color: rgb(246, 250, 250);
+}
+
 
 .modal-body {
     display: grid;
-    grid-template-columns: auto;
-    justify-content: stretch;
-    align-content: stretch;
-    width: auto;
-    height: 400px;
-    background-color: cornsilk;
+    grid-template-rows: auto;
+    gap: 10px;
 }
 
+.modal-body-item {
+    display: grid;
+    gap: 10px;
+    grid-template-columns: auto auto auto;
+    background-color: white;
+}
+
+.modal-body-item-image {
+    width: 100px;
+    height: 100px;
+}
+
+/* .quantity-box{
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+} */
+
+.quantity-box {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+
+.quantity-box> i {
+    margin: 6px;
+    color: red;
+}
+
+.item-text {
+    font-family: "Dosis", "Arial";
+    font-weight: 400;
+    font-size: 16px;
+}
+
+.total-amount {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-body-no-item {
+    display: grid;
+    background-color: white;
+    grid-template-rows: auto;
+    justify-content: center;
+    align-content: center;
+}
+
+.lowest-offer{
+    background-color: white;
+}
 .fas {
     font-size:48px;
     color: #fff;
@@ -19,7 +74,15 @@
 
 .modal-footer {
     display: grid;
-    grid-template-rows: auto;
+    align-content: stretch;
     justify-content: stretch;
+    align-items: stretch;
+    grid-template-rows: auto;
     background-color: white;
+}
+
+.modal-footer > span {
+    display: flex;
+    justify-content: center;
+    align-content: center;
 }

@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Link } from "react-router-dom";
 import Cart from '../components/Cart';
+import { CartConsumer } from '../shared/cart-context';
 import './Header.css';
 
 class Header extends Component {    
@@ -25,7 +26,11 @@ class Header extends Component {
                             <Link to="/register">Register</Link>
                         </span>
                         <img src="./static/images/cart.svg" alt="" data-toggle="modal" data-target="#myModal"></img>
-                        <span>0 items</span>
+                        <CartConsumer>
+                        {({cart}) => (
+                        <span>{cart.length + ` items`}</span>
+                        )}
+                        </CartConsumer>
                     </div>
                     <Cart/>
             </header>
