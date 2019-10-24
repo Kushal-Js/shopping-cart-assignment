@@ -8,22 +8,24 @@ class Login extends Component {
       <div className="login-container">
 
         <div className="login-info">
-          <span className="login-text"><h1>Login</h1></span>
+          <h1>Login</h1>
           <span>Get access to your Orders, Wishlist and Recommendations</span>
         </div>
 
-        <form method="post" action="/home" className="login-form">
-          <div id="emailContainer" className="login-input">
-            <label htmlFor="email">Email</label>
-            <input type="email" id="email" name="email" placeholder="" required />
-          </div>
-          <div id="pswdContainer" className="login-input">
-            <label htmlFor="password">Password</label>
-            <input type="password" id="password" placeholder="" />
-          </div>
+        <div className="login-form-container">
+          <form method="post" action="/home" className="login-form">
+            <div id="emailContainer" className="login-input">
+              {/* <label htmlFor="email">Email</label> */}
+              <input type="email" id="email" name="email" placeholder="Email" required />
+            </div>
+            <div id="pswdContainer" className="login-input">
+              {/* <label htmlFor="password">Password</label> */}
+              <input type="password" id="password" placeholder="Password" />
+            </div>
 
-          <button className="login-button" type="submit">Login</button>
-        </form>
+            <button className="login-button" type="submit">Login</button>
+          </form>
+        </div>
 
       </div>
     )
