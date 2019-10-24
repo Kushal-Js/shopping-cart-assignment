@@ -30,18 +30,20 @@ class Home extends Component {
 
     return (
       <div className="home-wrapper">
-        <div>
+        <article>
           <ImageSlider />
-        </div>
+        </article>
         {categories.map((item) => {
           return (
-            <article key={item.key}>
+            <article key={item.key} className="product-wrapper">
+              <span className="description-image">
               <img src={`.` + item.imageUrl} alt=""></img>
-              <div className="text">
+              </span>
+              <span className="description-wrapper">
                 <h3>{item.name}</h3>
                 <p>{item.description}</p>
-                <button onClick={() => this.navigate(item.id)} type="button">{`Explore `+ item.name}</button>
-              </div>
+                <button onClick={() => this.navigate(item.id)} className="w3-button w3-pink" type="button">{`Explore `+ item.name}</button>
+              </span>
             </article>
           )
         })}

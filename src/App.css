@@ -1,3 +1,19 @@
-/* .app {
-  display: grid;
-} */
+:root {
+  --pink: rgb(228, 64, 91);
+  --button: "w3-button w3-pink";
+  --blue: #4679bd;
+  --grey: #ddd;
+  --W200: 200px;
+  --Lft: left;
+}
+.Bx1,
+.Bx2,
+.Bx3,
+.Bx4 {
+  float: var(--Lft);
+  width: var(--W200);
+  height: var(--W200);
+  margin: 10px;
+  padding: 10px;
+  border: 1px solid var(--red);
+}

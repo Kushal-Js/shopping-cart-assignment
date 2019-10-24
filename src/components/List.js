@@ -28,7 +28,7 @@ class List extends Component {
                 <span>MRP Rs.{item.price}</span>
                 <CartConsumer>
                 {({ updateCart }) => (
-                <button onClick={() => updateCart(item)} className="item-text">Buy Now</button>
+                <button onClick={() => updateCart(item)} className="w3-button w3-pink">Buy Now</button>
                 )}
                 </CartConsumer>
                 </div>

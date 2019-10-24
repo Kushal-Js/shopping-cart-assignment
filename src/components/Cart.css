@@ -45,7 +45,7 @@
 
 .quantity-box> i {
     margin: 6px;
-    color: red;
+    color: var(--pink);
 }
 
 .item-text {
