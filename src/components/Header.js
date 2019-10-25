@@ -14,7 +14,7 @@ class Header extends Component {
                         <img src="./static/images/logo.png" alt=""></img>
                     </Link>
 
-                    <span className="header-basket-links">
+                    <span className="header-app-links">
                         <Link to="/home" className="header-links"><b>Home</b></Link>
                         <Link to="/products" className="header-links"><b>Products</b></Link>
                     </span>

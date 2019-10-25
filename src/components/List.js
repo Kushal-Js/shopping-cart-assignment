@@ -3,7 +3,7 @@ import { CartConsumer } from '../shared/cart-context';
 import './List.css';
 
 class List extends Component {
-  constructor(props){
+  constructor(props) {
     super(props)
     this.state = {
       cart: []
@@ -15,22 +15,22 @@ class List extends Component {
     const products = this.props.products;
 
     return (
-      
+
       <main className="list">
         {products.map((item) => {
           return (
             <article key={item.id}>
-              <img src={`.`+item.imageURL} alt=""></img>
+              <img src={`.` + item.imageURL} alt=""></img>
               <div className="text">
                 <h4>{item.name}</h4>
                 <p className="item-text">{item.description}</p>
-                <div>
-                <span>MRP Rs.{item.price}</span>
-                <CartConsumer>
-                {({ updateCart }) => (
-                <button onClick={() => updateCart(item)} className="w3-button w3-pink">Buy Now</button>
-                )}
-                </CartConsumer>
+                <div className="buy-area">
+                  <span>MRP Rs.{item.price}</span>
+                  <CartConsumer>
+                    {({ updateCart }) => (
+                      <button onClick={() => updateCart(item)} className="w3-button w3-pink">Buy Now</button>
+                    )}
+                  </CartConsumer>
                 </div>
               </div>
             </article>
@@ -40,8 +40,8 @@ class List extends Component {
     );
   }
 
-  addToCart(item){
-    this.setState({addedToCart: [...this.state.addedToCart, item]});
+  addToCart(item) {
+    this.setState({ addedToCart: [...this.state.addedToCart, item] });
   }
 }
 

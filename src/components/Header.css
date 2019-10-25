@@ -24,6 +24,14 @@
     align-content: center;
   }
 
+  .header-app-links {
+    display: grid;
+    font-size: 24px;
+    grid-auto-flow: column;
+    justify-content: end;
+    gap: 10px;
+  }
+
   .header-basket-links {
     display: grid;
     grid-auto-flow: column;

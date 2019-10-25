@@ -72,8 +72,19 @@
 }
 .fas {
     font-size:48px;
-    color: #fff;
+    color: black;
 }
+
+.dot {
+    text-align: center;
+    vertical-align: center;
+
+    height: 20px;
+    width: 20px;
+    margin: 5px;
+    border-radius: 25%;
+    display: inline-block;
+  }
 
 .modal-footer {
     display: grid;
@@ -88,4 +99,22 @@
     display: flex;
     justify-content: center;
     align-content: center;
+}
+
+.btn-checkout {
+    display: grid;
+    grid-template-columns: auto auto;
+}
+
+.btn-checkout-mesage {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+
+.btn-checkout-amount {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
 }
