@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { CartConsumer } from '../shared/cart-context';
+import commom from '../shared/common';
 import './List.css';
 
 class List extends Component {
@@ -29,7 +30,7 @@ class List extends Component {
                   <span>MRP Rs.{item.price}</span>
                   <CartConsumer>
                     {({ updateCart }) => (
-                      <button onClick={() => updateCart(item)} className="w3-button w3-pink">Buy Now</button>
+                      <button onClick={() => updateCart(item)} className="w3-button w3-pink">{commom.labels.buyNow}</button>
                     )}
                   </CartConsumer>
                 </div>

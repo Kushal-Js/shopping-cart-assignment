@@ -22,8 +22,8 @@ class Header extends Component {
 
                 <div className="header-basket">
                     <span className="header-basket-links">
-                        <Link to="/login">SignIn</Link>
-                        <Link to="/register">Register</Link>
+                        <Link to="/login" className="reg-links">SignIn</Link>
+                        <Link to="/register" className="reg-links">Register</Link>
                     </span>
                     <span className="cart">
                         <img src="./static/images/cart.svg" alt="" data-toggle="modal" data-target="#myModal"></img>

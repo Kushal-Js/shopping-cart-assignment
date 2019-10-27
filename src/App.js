@@ -7,12 +7,14 @@ import Register from './pages/Register';
 import Home from './pages/Home';
 import Products from './pages/Products';
 import { CartProvider } from './shared/cart-context';
+import { ProductProvider } from './shared/product-context';
 import './App.css';
 
 class App extends Component {
   render() {
     const App = () => (
       <CartProvider>
+        <ProductProvider>
         <Header />
         <Switch>
           <Route exact path='/' component={Login} />
@@ -22,6 +24,7 @@ class App extends Component {
           <Route exact path='/products' component={Products} />
         </Switch>
         <Footer />
+        </ProductProvider>
       </CartProvider>
     )
     return (

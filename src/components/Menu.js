@@ -1,9 +1,12 @@
 import React, { Component } from 'react';
 import axios from 'axios';
-import { Link } from "react-router-dom"
+import { Link } from "react-router-dom";
+import { ProductContext } from '../shared/product-context';
 import './Menu.css';
 
 class Menu extends Component {
+    static contextType = ProductContext;
+
     constructor(props) {
         super(props);
         this.state = {
@@ -12,7 +15,13 @@ class Menu extends Component {
     }
 
     componentDidMount() {
-        this.getList();
+        const user = this.context;
+        const categories = user.products;
+        if (user.products.length === 0) {
+            this.getList();
+        } else {
+            this.setState({ categories:  categories});
+        }
     }
 
     getList = () => {
@@ -30,7 +39,7 @@ class Menu extends Component {
                 {categories.map((item) => {
                     return (
                         <span key={item.key}>
-                            <Link to="/products" onClick= {() => this.props.simplifiedFunction(item.id)}>{item.name}</Link>
+                            <Link to="/products" className="main-nav-links" onClick= {() => this.props.simplifiedFunction(item.id)}>{item.name}</Link>
                             </span>
                     )
                 })}
@@ -40,6 +49,8 @@ class Menu extends Component {
 }
 
 class MobileMenu extends Component {
+    static contextType = ProductContext;
+
     constructor(props) {
         super(props);
         this.state = {
@@ -48,7 +59,13 @@ class MobileMenu extends Component {
     }
 
     componentDidMount() {
-        this.getList();
+        const user = this.context;
+        const categories = user.products;
+        if (user.products.length === 0) {
+            this.getList();
+        } else {
+            this.setState({ categories:  categories});
+        }
     }
 
     getList = () => {
@@ -60,21 +77,24 @@ class MobileMenu extends Component {
 
     render() {
         const { categories } = this.state;
+        const firstCat = categories.length > 0 ? categories[0].name : '';
+        const slicedCats = categories.slice(1, categories.length);
 
         return (
             <header className="main-head" id="main-head">
                 <div id="menu-mobile">
                     <div className="menu-mobile-brand">
-                        <Link to="/products" className="items"  onClick= {() => this.props.simplifiedFunction()}>Fruits and Vegetables</Link>
+                        <Link to="/products" className="items"  onClick= {() => this.props.simplifiedFunction()}>{firstCat}</Link>
                         <i className="fa fa-angle-down icon" data-toggle="collapse" data-target="#navbarCollapse"> </i>
                     </div>
 
                     <div className="collapse navbar-collapse" id="navbarCollapse">
                         <div className="navbar-nav">
-                            {categories.map((item) => {
+                            {slicedCats.map((item) => {
                                 return (
                                     <span key={item.key}>
-                                        <Link to="/products" onClick= {() => this.props.simplifiedFunction(item.id)}>{item.name}</Link>
+                                        <Link to="/products" className="main-nav-links" onClick= {() => this.props.simplifiedFunction(item.id)}>
+                                        {item.name}</Link>
                                         </span>
                                 )
                             })}

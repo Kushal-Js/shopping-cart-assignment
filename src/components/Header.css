@@ -30,6 +30,15 @@
     grid-auto-flow: column;
     justify-content: end;
     gap: 10px;
+    text-decoration: none;
+  }
+
+  .header-app-links:hover {
+    text-decoration: none;
+  }
+
+  .header-links:hover {
+    text-decoration: none;
   }
 
   .header-basket-links {
@@ -37,6 +46,14 @@
     grid-auto-flow: column;
     justify-content: end;
     gap: 10px;
+  }
+
+  .reg-links {
+    text-decoration: none;
+  }
+
+  .reg-links:hover {
+    text-decoration: none;
   }
 
   .header-links {
@@ -48,6 +65,7 @@
     margin-left: 20px;
     flex-direction: column;
     justify-content: flex-end;
+    text-decoration: none;
   }
 
   .header-basket > span img {
@@ -59,5 +77,5 @@
   .cart {
     padding-bottom: -20px;
     margin-bottom: -20px;
-    background-color: var(--grey);
+    background-color: var(--background-color);
   }

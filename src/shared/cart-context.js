@@ -8,7 +8,6 @@ const CartContext = createContext({
 export class CartProvider extends React.Component {
     updateCart = item => {
         this.setState({cart: [...this.state.cart, item]});
-        console.log('cart',item, this.state.cart);
   };
 
   state = {
