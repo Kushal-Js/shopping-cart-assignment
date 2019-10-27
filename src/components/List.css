@@ -11,25 +11,35 @@
   .list > article img {
     max-width: 100%;
   }
+  .product-item {
+    display: flex;
+    flex-direction: row;
+  }
+  .item-name {
+    height: 90px;
+  }
   .text {
     padding: 0 20px 20px;
   }
   .buy-area {
     display: flex;
     flex-direction: row;
-    justify-content: center;
+    margin-left: -45px;
+    margin-right: -45px;
+    justify-content: space-evenly;
     align-items: center;
   }
-  .text > button {
-    /* background: gray;
-    border: 0;
-    color: white;
-    padding: 10px;
-    width: 100%; */
-    }
+  .test {
+    display: block;
+    height: 250px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    background-color: rgb(247, 242, 242);
+  }
 
     .item-text {
       font-family: "Dosis", "Arial";
       font-weight: 400;
       font-size: 16px;
+      
   }

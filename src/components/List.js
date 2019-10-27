@@ -19,11 +19,12 @@ class List extends Component {
       <main className="list">
         {products.map((item) => {
           return (
-            <article key={item.id}>
-              <img src={`.` + item.imageURL} alt=""></img>
+            <article key={item.id} className="product-item">
+              
               <div className="text">
-                <h4>{item.name}</h4>
-                <p className="item-text">{item.description}</p>
+                <h4 className="item-name">{item.name}</h4>
+                <img src={`.` + item.imageURL} alt=""></img>
+                <span className="test"><p className="item-text">{item.description}</p></span>
                 <div className="buy-area">
                   <span>MRP Rs.{item.price}</span>
                   <CartConsumer>
