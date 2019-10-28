@@ -2,11 +2,11 @@ import React, { Component } from 'react';
 import { withRouter } from "react-router-dom";
 import axios from 'axios';
 import ImageSlider from '../components/ImageSlider';
-import { ProductContext } from '../shared/product-context';
+import { CategoryContext } from '../shared/category-context';
 import './Home.css';
 
 class Home extends Component {
-  static contextType = ProductContext;
+  static contextType = CategoryContext;
 
   constructor(props) {
     super(props);
@@ -24,7 +24,7 @@ class Home extends Component {
     const user = this.context;
     axios.get('http://localhost:8080/api/categories')
       .then((res) => {
-        user.getProducts(res.data);
+        user.setCategory(res.data);
         this.setState({ categories: res.data })
       })
   }

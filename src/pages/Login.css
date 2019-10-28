@@ -32,3 +32,12 @@
     justify-content: stretch;
     grid-template-rows: auto;
 }
+
+.sign-form-input {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: unset;
+    border: none;
+    border-bottom: 1px solid grey;
+  }

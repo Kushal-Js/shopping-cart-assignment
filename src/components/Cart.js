@@ -4,6 +4,13 @@ import './Cart.css';
 
 class Cart extends Component {
 
+    reduceItem(){
+    }
+
+    increaseItem(){
+    }
+
+
     render() {
         return (
 
@@ -46,8 +53,8 @@ class Cart extends Component {
                                                                 <span>
                                                                     <h3 className="item-text">{item.name}</h3>
                                                                     <span className="quantity-box">
-                                                                        <span className="dot w3-pink"><i className="fa fa-minus"></i></span>
-                                                                         1 <span className="dot w3-pink"><i className="fa fa-plus"></i></span>
+                                                                        <span className="dot w3-pink" onClick={() => this.reduceItem()}><i className="fa fa-minus"></i></span>
+                                                                         1 <span className="dot w3-pink" onClick={() => this.increaseItem()}><i className="fa fa-plus"></i></span>
                                                                          <i className="fa fa-times" aria-hidden="true"></i>
                                                                          Rs.{item.price}
                                                                     </span>
@@ -81,14 +88,14 @@ class Cart extends Component {
                         </CartConsumer>
 
                         <CartConsumer>
-                            {({ cart }) => (
+                            {({ cart, getGrossTotal }) => (
                                 (cart.length > 0) ?
                                     (<div className="modal-footer">
                                         <span>Promo code can be applied on payment page</span>
 
                                         <div className="btn-checkout w3-button w3-pink" data-dismiss="modal">
                                             <span className="btn-checkout-message">Proceed to checkout</span>
-                                            <span className="btn-checkout-amount">Rs {cart.length} ></span>
+                                            <span className="btn-checkout-amount">Rs {getGrossTotal()} ></span>
                                         </div>
 
                                     </div>)

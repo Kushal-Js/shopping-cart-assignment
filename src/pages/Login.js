@@ -16,14 +16,14 @@ class Login extends Component {
           <form method="post" action="/home" className="login-form">
             <div id="emailContainer" className="login-input">
               {/* <label htmlFor="email">Email</label> */}
-              <input type="email" id="email" name="email" placeholder="Email" required />
+              <input type="email" id="email" name="email" className="sign-form-input" placeholder="Email" required />
             </div>
             <div id="pswdContainer" className="login-input">
               {/* <label htmlFor="password">Password</label> */}
-              <input type="password" id="password" placeholder="Password" />
+              <input type="password" id="password" name="password" className="sign-form-input" placeholder="Password" required/>
             </div>
 
-            <button className="login-button" type="submit">Login</button>
+            <button className="login-button w3-button w3-pink" type="submit">Login</button>
           </form>
         </div>
 

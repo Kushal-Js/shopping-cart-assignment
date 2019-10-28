@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import { Link } from "react-router-dom";
-import { ProductContext } from '../shared/product-context';
+import { CategoryContext } from '../shared/category-context';
 import './Menu.css';
 
 class Menu extends Component {
-    static contextType = ProductContext;
+    static contextType = CategoryContext;
 
     constructor(props) {
         super(props);
@@ -16,8 +16,8 @@ class Menu extends Component {
 
     componentDidMount() {
         const user = this.context;
-        const categories = user.products;
-        if (user.products.length === 0) {
+        const categories = user.categories;
+        if (user.categories.length === 0) {
             this.getList();
         } else {
             this.setState({ categories:  categories});
@@ -49,7 +49,7 @@ class Menu extends Component {
 }
 
 class MobileMenu extends Component {
-    static contextType = ProductContext;
+    static contextType = CategoryContext;
 
     constructor(props) {
         super(props);
@@ -60,8 +60,8 @@ class MobileMenu extends Component {
 
     componentDidMount() {
         const user = this.context;
-        const categories = user.products;
-        if (user.products.length === 0) {
+        const categories = user.categories;
+        if (user.categories.length === 0) {
             this.getList();
         } else {
             this.setState({ categories:  categories});

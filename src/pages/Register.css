@@ -1,14 +1,9 @@
 .login-info {
     grid-area: login-info;
-       /* display: grid;
-       grid-template-rows: auto;
-       justify-content: center; */
 }
 
 .login-form-container {
     grid-area: login-form-container;
-    /* display: grid;
-    grid-template-columns: auto auto; */
 }
 
 .login-container {
@@ -21,13 +16,23 @@
 }
 
 .login-button {
-    background-color: red;
+    background-color: var(--pink);
     color: black
 }
 
-.login-form {
+.register-form {
     display: grid;
     gap: 10px;
     justify-content: stretch;
+    align-items: stretch;
     grid-template-rows: auto;
 }
+
+.sign-form-input {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: unset;
+    border: none;
+    border-bottom: 1px solid grey;
+  }
