@@ -15,27 +15,27 @@ class Login extends Component {
         <div className="login-form-container">
           <form method="post" action="/home" className="register-form">
             <div id="firstNameContainer" className="login-input">
-              {/* <label htmlFor="email">First Name</label> */}
-              <input type="text" id="email" name="email" className="sign-form-input" placeholder="First Name" required />
+              <label htmlFor="firstName">First Name</label>
+              <input type="text" id="firstName" name="firstName" className="sign-form-input" required />
             </div>
             <div id="lastNameContainer" className="login-input">
-              {/* <label htmlFor="email">Last Name</label> */}
-              <input type="text" id="email" name="email" className="sign-form-input" placeholder="Last Name" required />
+              <label htmlFor="lastName">Last Name</label>
+              <input type="text" id="lastName" name="lastName" className="sign-form-input" required />
             </div>
             <div id="emailContainer" className="login-input">
-              {/* <label htmlFor="email">Email</label> */}
-              <input type="email" id="email" name="email" className="sign-form-input" placeholder="Email" required />
+              <label htmlFor="email">Email</label>
+              <input type="email" id="email" name="email" className="sign-form-input" required />
             </div>
             <div id="pswdContainer" className="login-input">
-              {/* <label htmlFor="password">Password</label> */}
-              <input type="password" id="password" className="sign-form-input" placeholder="Password" required/>
+              <label htmlFor="password">Password</label>
+              <input type="password" id="password" className="sign-form-input" required/>
             </div>
             <div id="confPswdContainer" className="login-input">
-              {/* <label htmlFor="password">Confirm Password</label> */}
-              <input type="password" id="password" className="sign-form-input" placeholder="Confirm Password" required/>
+              <label htmlFor="confirmPassword">Confirm Password</label>
+              <input type="password" id="confirmPassword" name="confirmPassword" className="sign-form-input" required/>
             </div>
 
-            <button className="login-button w3-button w3-pink" type="submit">Signup</button>
+            <button role="submit" className="login-button w3-button w3-pink" type="submit">Signup</button>
           </form>
         </div>
 

@@ -16,15 +16,22 @@ export class CartProvider extends React.Component {
   }
 
   removeItem = (item) => {
-    const products = this.state.cart;
+    console.log('removed', item);
+    //const products = this.state.cart;
+    const cart = this.state.cart;
+    const filteredCart = cart.filter(function(value, index) {
+      return value.id === item.id 
+    })
   } 
 
   addItem = (item) => {
-    const products = this.state.cart;
+    console.log('added', item);
+    //const products = this.state.cart;
   } 
 
   netTotal = (item) => {
-    const products = this.state.cart;
+    console.log('net total', item);
+    //const products = this.state.cart;
   }
 
   getGrossTotal = () => {

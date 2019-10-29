@@ -9,24 +9,24 @@ class Header extends Component {
     render() {
         return (
             <header className="app-header">
-                <div className="header-brand">
-                    <Link to="/home">
-                        <img src="./static/images/logo.png" alt=""></img>
+                <div role="main heading" className="header-brand">
+                    <Link to="/home" tabIndex={0}>
+                        <img src="./static/images/logo.png" alt="Sabka Bazaar"></img>
                     </Link>
 
                     <span className="header-app-links">
-                        <Link to="/home" className="header-links"><b>Home</b></Link>
-                        <Link to="/products" className="header-links"><b>Products</b></Link>
+                        <Link to="/home" className="header-links" tabIndex={0}><b>Home</b></Link>
+                        <Link to="/products" className="header-links" tabIndex={0}><b>Products</b></Link>
                     </span>
                 </div>
 
-                <div className="header-basket">
+                <div role="main heading" className="header-basket">
                     <span className="header-basket-links">
-                        <Link to="/login" className="reg-links">SignIn</Link>
-                        <Link to="/register" className="reg-links">Register</Link>
+                        <Link to="/login" className="reg-links" tabIndex={0}>SignIn</Link>
+                        <Link to="/register" className="reg-links" tabIndex={0}>Register</Link>
                     </span>
                     <span className="cart">
-                        <img src="./static/images/cart.svg" alt="" data-toggle="modal" data-target="#myModal"></img>
+                        <img src="./static/images/cart.svg" alt="Sabka Bazaar Cart" data-toggle="modal" data-target="#myModal"></img>
                         <CartConsumer>
                             {({ cart }) => (
                                 <span>{cart.length + ` items`}</span>

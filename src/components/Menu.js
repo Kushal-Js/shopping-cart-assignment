@@ -39,7 +39,7 @@ class Menu extends Component {
                 {categories.map((item) => {
                     return (
                         <span key={item.key}>
-                            <Link to="/products" className="main-nav-links" onClick= {() => this.props.simplifiedFunction(item.id)}>{item.name}</Link>
+                            <Link to="/products" title={item.name} className="main-nav-links" onClick= {() => this.props.simplifiedFunction(item.id)}>{item.name}</Link>
                             </span>
                     )
                 })}
@@ -84,7 +84,7 @@ class MobileMenu extends Component {
             <header className="main-head" id="main-head">
                 <div id="menu-mobile">
                     <div className="menu-mobile-brand">
-                        <Link to="/products" className="items"  onClick= {() => this.props.simplifiedFunction()}>{firstCat}</Link>
+                        <Link to="/products" className="items" title={firstCat} onClick= {() => this.props.simplifiedFunction()}>{firstCat}</Link>
                         <i className="fa fa-angle-down icon" data-toggle="collapse" data-target="#navbarCollapse"> </i>
                     </div>
 
@@ -93,7 +93,7 @@ class MobileMenu extends Component {
                             {slicedCats.map((item) => {
                                 return (
                                     <span key={item.key}>
-                                        <Link to="/products" className="main-nav-links" onClick= {() => this.props.simplifiedFunction(item.id)}>
+                                        <Link to="/products" title={item.name} className="main-nav-links" onClick= {() => this.props.simplifiedFunction(item.id)}>
                                         {item.name}</Link>
                                         </span>
                                 )

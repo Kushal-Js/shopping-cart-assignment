@@ -1,13 +1,29 @@
 import React, { Component } from 'react';
-import { CartConsumer } from '../shared/cart-context';
+import { CartConsumer, CartContext } from '../shared/cart-context';
 import './Cart.css';
 
 class Cart extends Component {
+    static contextType = CartContext;
 
-    reduceItem(){
+    constructor(props) {
+        super(props);
+        this.state = {
+          categories: []
+        }
+        this.reduceItem = this.reduceItem.bind(this);
+        this.increaseItem = this.increaseItem.bind(this);
+      }
+
+    reduceItem(item){
+        const cart = this.context;
+        console.log('test', cart);
+        // cart((reduceItem) => reduceItem(item));
+        cart.removeItem(item);
     }
 
-    increaseItem(){
+    increaseItem(item){
+        const cart = this.context;
+        cart.addItem(item);
     }
 
 
@@ -53,8 +69,8 @@ class Cart extends Component {
                                                                 <span>
                                                                     <h3 className="item-text">{item.name}</h3>
                                                                     <span className="quantity-box">
-                                                                        <span className="dot w3-pink" onClick={() => this.reduceItem()}><i className="fa fa-minus"></i></span>
-                                                                         1 <span className="dot w3-pink" onClick={() => this.increaseItem()}><i className="fa fa-plus"></i></span>
+                                                                        <span className="dot w3-pink" onClick={() => this.reduceItem(item)}><i className="fa fa-minus"></i></span>
+                                                                         1 <span className="dot w3-pink" onClick={() => this.increaseItem(item)}><i className="fa fa-plus"></i></span>
                                                                          <i className="fa fa-times" aria-hidden="true"></i>
                                                                          Rs.{item.price}
                                                                     </span>
