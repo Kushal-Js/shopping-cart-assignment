@@ -20,7 +20,7 @@ class Menu extends Component {
         if (user.categories.length === 0) {
             this.getList();
         } else {
-            this.setState({ categories:  categories});
+            this.setState({ categories: categories });
         }
     }
 
@@ -33,14 +33,14 @@ class Menu extends Component {
 
     render() {
         const { categories } = this.state;
-
+        console.log('key', categories);
         return (
-            <aside className="main-nav" id="main-nav">
+            <aside role="complementary" className="main-nav" id="main-nav">
                 {categories.map((item) => {
                     return (
-                        <span key={item.key}>
-                            <Link to="/products" title={item.name} className="main-nav-links" onClick= {() => this.props.simplifiedFunction(item.id)}>{item.name}</Link>
-                            </span>
+                        <span key={item.id}>
+                            <Link to="/products" role="navigation" title={item.name} className="main-nav-links" onClick={() => this.props.simplifiedFunction(item.id)}>{item.name}</Link>
+                        </span>
                     )
                 })}
             </aside>
@@ -64,7 +64,7 @@ class MobileMenu extends Component {
         if (user.categories.length === 0) {
             this.getList();
         } else {
-            this.setState({ categories:  categories});
+            this.setState({ categories: categories });
         }
     }
 
@@ -81,10 +81,10 @@ class MobileMenu extends Component {
         const slicedCats = categories.slice(1, categories.length);
 
         return (
-            <header className="main-head" id="main-head">
+            <header role="complementary" className="main-head" id="main-head">
                 <div id="menu-mobile">
                     <div className="menu-mobile-brand">
-                        <Link to="/products" className="items" title={firstCat} onClick= {() => this.props.simplifiedFunction()}>{firstCat}</Link>
+                        <Link to="/products" role="navigation" className="items" title={firstCat} onClick={() => this.props.simplifiedFunction()}>{firstCat}</Link>
                         <i className="fa fa-angle-down icon" data-toggle="collapse" data-target="#navbarCollapse"> </i>
                     </div>
 
@@ -93,9 +93,9 @@ class MobileMenu extends Component {
                             {slicedCats.map((item) => {
                                 return (
                                     <span key={item.key}>
-                                        <Link to="/products" title={item.name} className="main-nav-links" onClick= {() => this.props.simplifiedFunction(item.id)}>
-                                        {item.name}</Link>
-                                        </span>
+                                        <Link to="/products" role="navigation" title={item.name} className="main-nav-links" onClick={() => this.props.simplifiedFunction(item.id)}>
+                                            {item.name}</Link>
+                                    </span>
                                 )
                             })}
                         </div>

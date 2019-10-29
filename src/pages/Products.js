@@ -40,9 +40,9 @@ class Products extends Component {
 
         <Menu simplifiedFunction = {this.simplifiedFunction} />
 
-        <article className="content">
+        <div role="main" className="content">
           <List products={products}/>
-        </article>
+        </div>
 
       </div>
     );

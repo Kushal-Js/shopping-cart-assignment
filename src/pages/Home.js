@@ -46,7 +46,7 @@ class Home extends Component {
               <span className="description-wrapper">
                 <h3>{item.name}</h3>
                 <p>{item.description}</p>
-                <button onClick={() => this.navigate(item.id)} className="w3-button w3-pink" type="button">{`Explore `+ item.name}</button>
+                <button role="navigation" onClick={() => this.navigate(item.id)} className="w3-button w3-pink" type="button">{`Explore `+ item.name}</button>
               </span>
             </article>
           )
