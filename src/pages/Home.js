@@ -17,7 +17,13 @@ class Home extends Component {
   }
 
   componentDidMount() {
-    this.getList();
+    const user = this.context;
+    const categories = user.categories;
+    if (user.categories.length === 0) {
+        this.getList();
+    } else {
+        this.setState({ categories: categories });
+    }
   }
 
   getList = () => {
