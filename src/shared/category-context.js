@@ -6,8 +6,8 @@ export const CategoryContext = createContext({
 });
 
 export class CategoryProvider extends React.Component {
-  setCategory = category => {
-        this.setState({categories: [...this.state.categories, category]});
+  setCategory = categories => {
+        this.setState({categories: [...this.state.categories, ...categories]});
   };
 
   state = {

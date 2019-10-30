@@ -33,12 +33,11 @@ class Menu extends Component {
 
     render() {
         const { categories } = this.state;
-        console.log('key', categories);
         return (
-            <aside role="complementary" className="main-nav" id="main-nav">
-                {categories.map((item) => {
+            <aside className="main-nav" id="main-nav">
+                {categories.map((item, index) => {
                     return (
-                        <span key={item.id}>
+                        <span key={index}>
                             <Link to="/products" role="navigation" title={item.name} className="main-nav-links" onClick={() => this.props.simplifiedFunction(item.id)}>{item.name}</Link>
                         </span>
                     )

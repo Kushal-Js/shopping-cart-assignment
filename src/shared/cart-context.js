@@ -1,41 +1,102 @@
 import React, { createContext } from 'react';
 
 export const CartContext = createContext({
-    cart: [],
-    updateCart: () => {},
-    removeItem: () => {},
-    addItem: () => {},
-    netTotal: () => {},
-    getGrossTotal: () => {}
+  cart: [],
+  updateCart: () => { },
+  removeItem: () => { },
+  addItem: () => { },
+  getGrossTotal: () => { }
 });
 
 export class CartProvider extends React.Component {
-    updateCart = item => {
-        this.setState({cart: [...this.state.cart, item]},
-          this.getGrossTotal);
+  getTotal = (count, item) => {
+    return count * item.price;
+  }
+
+  updateCart = (item) => {
+    const temp = [...this.state.cart];
+    let match = false;
+
+    if (temp.length > 0) {
+      temp.forEach((value, index) => {
+
+        // console.log('boom', value.id, item.id);
+        if (value.id == item.id) {
+          // console.log('boom', value.id, item.id);
+
+          let updatedCount = ++temp[index].count;
+          temp[index].count = updatedCount;
+          temp[index].total = this.getTotal(updatedCount, item);
+
+          // console.log('issue', temp);
+          match = true;
+          this.setState({ cart: temp });
+
+        } })
+        if (!match) {
+
+          let newEntry = {
+            id: item.id,
+            value: item,
+            count: 1,
+            total: this.getTotal(1, item)
+          }
+          // console.log('suspect 1', newEntry, item.id);
+          this.setState({ cart: [...this.state.cart, ...[newEntry]] });
+        }
+      
+    } else {
+
+      let newEntry = {
+        id: item.id,
+        value: item,
+        count: 1,
+        total: this.getTotal(1, item)
+      }
+
+      // console.log('suspect 2', newEntry, item.id);
+      this.setState({ cart: [...this.state.cart, ...[newEntry]] });
+
+    }
   }
 
   removeItem = (item) => {
-    console.log('removed', item);
-    //const products = this.state.cart;
-    const cart = this.state.cart;
-    const filteredCart = cart.filter(function(value, index) {
-      return value.id === item.id 
-    })
-  } 
+
+    const temp = [...this.state.cart];
+    if (temp.length > 0) {
+      temp.forEach((value, index) => {
+        if (value.id === item.id) {
+          if (temp[index].count > 0) {
+          let updatedCount = --temp[index].count;
+          
+          temp[index].count = updatedCount;
+          temp[index].total = this.getTotal(updatedCount, value.value);
+          this.setState({ cart: [...temp] });
+          }
+        }
+      })
+    }
+  }
 
   addItem = (item) => {
-    console.log('added', item);
-    //const products = this.state.cart;
-  } 
 
-  netTotal = (item) => {
-    console.log('net total', item);
-    //const products = this.state.cart;
+    const temp = [...this.state.cart];
+    if (temp.length > 0) {
+
+      temp.forEach((value, index) => {
+        if (value.id === item.id) {
+          let updatedCount = ++temp[index].count;
+          temp[index].count = updatedCount;
+          temp[index].total = this.getTotal(updatedCount, value.value);
+          this.setState({ cart: [...temp] });
+
+        }
+      })
+    }
   }
 
   getGrossTotal = () => {
-    return this.state.cart.reduce(function(total, num){ return total + num.price}, 0);
+    return this.state.cart.reduce(function (total, item) { return total + item.total }, 0);
   }
 
   state = {
@@ -43,7 +104,6 @@ export class CartProvider extends React.Component {
     updateCart: this.updateCart,
     removeItem: this.removeItem,
     addItem: this.addItem,
-    netTotal: this.netTotal,
     getGrossTotal: this.getGrossTotal
   };
 

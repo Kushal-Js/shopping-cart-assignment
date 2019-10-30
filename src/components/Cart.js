@@ -16,8 +16,6 @@ class Cart extends Component {
 
     reduceItem(item){
         const cart = this.context;
-        console.log('test', cart);
-        // cart((reduceItem) => reduceItem(item));
         cart.removeItem(item);
     }
 
@@ -63,21 +61,21 @@ class Cart extends Component {
                                                         return (
                                                             <div key={item.id} className="modal-body-item">
                                                                 <span>
-                                                                    <img className="modal-body-item-image" src={`.` + item.imageURL} alt=""></img>
+                                                                    <img className="modal-body-item-image" src={`.` + item.value.imageURL} alt=""></img>
                                                                 </span>
 
                                                                 <span>
-                                                                    <h3 className="item-text">{item.name}</h3>
+                                                                    <h3 className="item-text">{item.value.name}</h3>
                                                                     <span className="quantity-box">
                                                                         <span className="dot w3-pink" onClick={() => this.reduceItem(item)}><i className="fa fa-minus"></i></span>
-                                                                         1 <span className="dot w3-pink" onClick={() => this.increaseItem(item)}><i className="fa fa-plus"></i></span>
+                                                                         {item.count} <span className="dot w3-pink" onClick={() => this.increaseItem(item)}><i className="fa fa-plus"></i></span>
                                                                          <i className="fa fa-times" aria-hidden="true"></i>
-                                                                         Rs.{item.price}
+                                                                         Rs.{item.value.price}
                                                                     </span>
                                                                 </span>
 
                                                                 <span className="total-amount">
-                                                                    Rs.{item.price}
+                                                                    Rs.{item.total}
                                                                 </span>
                                                             </div>
                                                         )
