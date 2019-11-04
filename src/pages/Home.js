@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import { withRouter } from "react-router-dom";
 import axios from 'axios';
-import ImageSlider from '../components/ImageSlider';
+// import ImageSlider from '../components/ImageSlider';
+import ControlledCarousel from '../components/Corousel';
 import { CategoryContext } from '../shared/category-context';
 import './Home.css';
 
@@ -39,10 +40,11 @@ class Home extends Component {
     const { categories } = this.state;
 
     return (
-      <div className="home-wrapper">
+      <div>
         <article>
-          <ImageSlider />
+          <ControlledCarousel />
         </article>
+        <div className="home-wrapper">
         {categories.map((item) => {
           return (
             <article key={item.key} className="product-wrapper">
@@ -57,10 +59,11 @@ class Home extends Component {
             </article>
           )
         })}
+        </div>
       </div>  
     );
   }
-
+//  className="home-wrapper"
   navigate(catId) {
     this.props.history.push('/products', {catId});
   }

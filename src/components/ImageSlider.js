@@ -97,7 +97,8 @@ class ImageSlider extends Component {
   const LeftArrow = (props) => {
     return (
       <div className="backArrow arrow" onClick={props.goToPrevSlide}>
-        <i className="fa fa-arrow-left fa-2x" aria-hidden="true"></i>
+        {/* <i className="fa fa-arrow-left fa-2x" aria-hidden="true"></i> */}
+        <button>PREV</button>
       </div>
     );
   }
@@ -106,7 +107,8 @@ class ImageSlider extends Component {
   const RightArrow = (props) => {
     return (
       <div className="nextArrow arrow" onClick={props.goToNextSlide}>
-        <i className="fa fa-arrow-right fa-2x" aria-hidden="true"></i>
+        {/* <i className="fa fa-arrow-right fa-2x" aria-hidden="true"></i> */}
+        <button>NEXT</button>
       </div>
     );
   }
