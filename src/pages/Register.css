@@ -15,14 +15,10 @@
     gap: 20px;
 }
 
-.login-button {
-    background-color: var(--pink);
-    color: black
-}
-
 .register-form {
     display: grid;
-    gap: 10px;
+    gap: 20px;
+    padding: 20px;
     justify-content: stretch;
     align-items: stretch;
     grid-template-rows: auto;

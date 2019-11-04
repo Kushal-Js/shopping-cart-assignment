@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import TextField from '@material-ui/core/TextField';
-import './Login.css';
+import './LoginTest.css';
 
 
-class Login extends Component {
+class LoginTest extends Component {
     render() {
         return (
             <div role="login container" className="login-container">
@@ -30,4 +30,4 @@ class Login extends Component {
         )
     }
 }
-export default Login;
+export default LoginTest;
