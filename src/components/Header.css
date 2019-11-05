@@ -71,11 +71,16 @@
   .header-basket > span img {
     height: 60px;
     width: 60px;
-    color: var(--pink);
   }
 
   .cart {
     padding-bottom: -20px;
     margin-bottom: -20px;
     background-color: var(--background-color);
+  }
+
+  @media screen and (max-width: 600px) {
+    #header-app-links {
+        display: none;
+    }
   }

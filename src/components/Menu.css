@@ -6,6 +6,7 @@
 
   .menu-mobile-brand {
       display: grid;
+      margin-left: 10px;
       grid-template-columns: auto auto;  /* grid has two columns; content defines width */
       justify-content: space-between;    /* horizontal alignment of grid tracks */
       align-content: space-between;      /* vertical alignment of grid tracks */

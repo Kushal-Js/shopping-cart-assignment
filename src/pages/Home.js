@@ -41,7 +41,7 @@ class Home extends Component {
 
     return (
       <div>
-        <article>
+        <article className="corousel-justifier">
           <ControlledCarousel />
         </article>
         <div className="home-wrapper">

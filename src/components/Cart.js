@@ -38,13 +38,13 @@ class Cart extends Component {
                                 <CartConsumer>
                                     {({ cart }) => (
                                         (cart.length > 0) ?
-                                            (<span>({cart.length + ` items`})</span>)
+                                            (<span>({cart.length + ` item`})</span>)
                                             : (<span></span>)
                                     )}
                                 </CartConsumer>
                             </h4>
                             <button type="button" className="close" data-dismiss="modal">
-                                <i className="fas fa-window-close"></i>
+                                <i className="fa fa-window-close cart-close"></i>
                             </button>
                         </div>
 
@@ -109,7 +109,7 @@ class Cart extends Component {
 
                                         <div className="btn-checkout w3-button w3-pink" data-dismiss="modal">
                                             <span className="btn-checkout-message">Proceed to checkout</span>
-                                            <span className="btn-checkout-amount">Rs {getGrossTotal()} ></span>
+                                            <span className="btn-checkout-amount">{`Rs${getGrossTotal()}   >`}</span>
                                         </div>
 
                                     </div>)

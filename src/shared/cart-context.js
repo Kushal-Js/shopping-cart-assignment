@@ -21,7 +21,7 @@ export class CartProvider extends React.Component {
       temp.forEach((value, index) => {
 
         // console.log('boom', value.id, item.id);
-        if (value.id == item.id) {
+        if (value.id === item.id) {
           // console.log('boom', value.id, item.id);
 
           let updatedCount = ++temp[index].count;
