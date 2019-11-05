@@ -1,7 +1,7 @@
 .corousel-justifier {
   padding: 20px;
   border-bottom: 1px solid #ccc;
-  box-shadow: 0px 2px #888888;
+  box-shadow: 0px 5px 5px -4px #aaaaaa;
 }
 .home-wrapper {
     display: grid;
@@ -42,8 +42,9 @@
 
 .home-wrapper > article {
     border-bottom: 1px solid #ccc;
-    box-shadow: 0px 2px #888888;
+    box-shadow: 0px 5px 5px -4px #aaaaaa;
     padding: 5px;
+    z-index: -1;
   }
   .home-wrapper > article img {
     width: 300px;
