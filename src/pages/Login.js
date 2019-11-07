@@ -6,9 +6,9 @@ import './Login.css';
 class Login extends Component {
     render() {
         return (
-            <div role="login container" className="login-container">
+            <div className="login-container">
 
-                <div role="login text" className="login-info">
+                <div className="login-info">
                     <h1>Login</h1>
                     <span>Get access to your Orders, Wishlist and Recommendations</span>
                 </div>
@@ -22,7 +22,7 @@ class Login extends Component {
                             <TextField id="floating-center-title" label="Password" linedirection="center" className="md-cell md-cell--bottom" required/>
                         </div>
 
-                        <button role="submit login details" className="login-button w3-button w3-pink" type="submit">Login</button>
+                        <button className="login-button w3-button w3-pink" type="submit">Login</button>
                     </form>
                 </div>
 

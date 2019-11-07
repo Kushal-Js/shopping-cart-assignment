@@ -38,8 +38,6 @@ export default class ControlledCarousel extends Component {
 
         if (urls.length > 0){
             urlsList = urls.map((url, index) => (<img style={{ width: '100%' }} key={index} src={url} alt=""></img>))
-            
-            console.log('urls', urlsList);
         }
 
         return (

@@ -63,9 +63,10 @@ class Home extends Component {
       </div>  
     );
   }
-//  className="home-wrapper"
+
   navigate(catId) {
     this.props.history.push('/products', {catId});
   }
 }
+
 export default withRouter(Home);

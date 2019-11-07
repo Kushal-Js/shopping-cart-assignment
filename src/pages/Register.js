@@ -31,7 +31,7 @@ class Login extends Component {
               <TextField id="floating-center-title" label="Confirm Password" linedirection="center" className="md-cell md-cell--bottom" required />
             </div>
 
-            <button role="submit" className="login-button w3-button w3-pink" type="submit">Signup</button>
+            <button className="login-button w3-button w3-pink" type="submit">Signup</button>
           </form>
         </div>
 
