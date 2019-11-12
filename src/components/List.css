@@ -6,7 +6,6 @@
     }
   .list > article {
     border-bottom: 1px dotted #ccc;
-    z-index: -1;
     /* box-shadow: 2px 0px 0px 0px #888888; */
     box-shadow: 8px 3px 11px -7px #aaaaaa;
   }
