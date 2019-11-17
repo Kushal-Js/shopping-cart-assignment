@@ -9,11 +9,15 @@ class Products extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      products: []
+      products: [],
+      width: 0,
+      height: 0
     }
   }
   
   componentDidMount() {
+    this.updateWindowDimensions();
+    window.addEventListener("resize", this.updateWindowDimensions);
     this.getList();
   }
   
@@ -30,22 +34,36 @@ class Products extends Component {
       .then((res) => this.setState({ products: res.data }))
   }
 
+  updateWindowDimensions = () => {
+    this.setState({ width: window.innerWidth, height: window.innerHeight });
+}
+
   render() {
     const { products } = this.state;
 
     return (
-      <div className="wrapper">
-
-        <MobileMenu simplifiedFunction = {this.simplifiedFunction} />
-
-        <Menu simplifiedFunction = {this.simplifiedFunction} />
-
-        <div role="main" className="content">
-          <List products={products}/>
-        </div>
-
-      </div>
+      (this.state.width < 601) ?
+        (
+          <div className="wrapper">
+            <MobileMenu simplifiedFunction={this.simplifiedFunction} />
+            <div role="main" className="content">
+              <List products={products} />
+            </div>
+          </div>
+        ) : (
+          <div className="wrapper">
+            <Menu simplifiedFunction={this.simplifiedFunction} />
+            <div role="main" className="content">
+              <List products={products} />
+            </div>
+          </div>
+        )
     );
   }
+
+  componentWillUnmount() {
+    window.removeEventListener("resize", this.updateWindowDimensions);
+}
+
 }
 export default Products;

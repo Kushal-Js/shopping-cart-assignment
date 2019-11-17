@@ -10,20 +10,20 @@ class Header extends Component {
         return (
             <header role="banner" className="app-header">
                 <div role="main heading" className="header-brand">
-                    <Link role="navigation" to="/home" tabIndex={0}>
+                    <Link role="navigation" to="/home">
                         <img src="./static/images/logo.png" alt="Sabka Bazaar"></img>
                     </Link>
 
                     <span className="header-app-links" id="header-app-links">
-                        <Link role="navigation" to="/home" className="header-links" tabIndex={0}><b>Home</b></Link>
-                        <Link role="navigation" to="/products" className="header-links" tabIndex={0}><b>Products</b></Link>
+                        <Link role="navigation" to="/home" className="header-links"><b>Home</b></Link>
+                        <Link role="navigation" to="/products" className="header-links"><b>Products</b></Link>
                     </span>
                 </div>
 
                 <div role="main heading" className="header-basket">
                     <span className="header-basket-links">
-                        <Link role="navigation" to="/login" className="reg-links" tabIndex={0}>SignIn</Link>
-                        <Link role="navigation" to="/register" className="reg-links" tabIndex={0}>Register</Link>
+                        <Link role="navigation" to="/login" className="reg-links">SignIn</Link>
+                        <Link role="navigation" to="/register" className="reg-links">Register</Link>
                     </span>
                     <span className="cart">
                         <img src="./static/images/cart.svg" alt="Sabka Bazaar Cart" data-toggle="modal" data-target="#myModal"></img>

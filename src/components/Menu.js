@@ -34,7 +34,7 @@ class Menu extends Component {
     render() {
         const { categories } = this.state;
         return (
-            <aside className="main-nav" id="main-nav">
+            <aside className="main-nav">
                 {categories.map((item, index) => {
                     return (
                         <span key={index}>
@@ -80,7 +80,7 @@ class MobileMenu extends Component {
         const slicedCats = categories.slice(1, categories.length);
 
         return (
-            <header role="complementary" className="main-head" id="main-head">
+            <header role="complementary" className="main-head">
                 <div id="menu-mobile">
                     <div className="menu-mobile-brand">
                         <Link to="/products" role="navigation" className="items" title={firstCat} onClick={() => this.props.simplifiedFunction()}>{firstCat}</Link>
