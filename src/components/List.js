@@ -25,7 +25,7 @@ class List extends Component {
               <div className="text">
                 <h4 className="item-name">{item.name}</h4>
                 <img src={`.` + item.imageURL} alt=""></img>
-                <span className="test"><p className="item-text">{item.description}</p></span>
+                <span className="item-text-block"><p className="item-text">{item.description}</p></span>
                 <div className="buy-area">
                   <span>MRP Rs.{item.price}</span>
                   <CartConsumer>
