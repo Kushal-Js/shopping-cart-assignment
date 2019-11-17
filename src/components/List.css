@@ -33,12 +33,13 @@
   .item-text-block {
     display: block;
     height: 320px;
+    /* height: auto; */
     margin-top: 10px;
     margin-bottom: 10px;
     background-color: var(--background-color)
   }
 
-    .item-text {
+    .list-item-text {
       font-family: "Dosis", "Arial";
       font-weight: 400;
       font-size: 16px;

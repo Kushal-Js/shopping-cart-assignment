@@ -45,14 +45,14 @@ class Products extends Component {
       (this.state.width < 601) ?
         (
           <div className="wrapper">
-            <MobileMenu simplifiedFunction={this.simplifiedFunction} />
+            <MobileMenu simplifiedFunction={(catId) => this.simplifiedFunction(catId)} />
             <div role="main" className="content">
               <List products={products} />
             </div>
           </div>
         ) : (
           <div className="wrapper">
-            <Menu simplifiedFunction={this.simplifiedFunction} />
+            <Menu simplifiedFunction={(catId) => this.simplifiedFunction(catId)} />
             <div role="main" className="content">
               <List products={products} />
             </div>

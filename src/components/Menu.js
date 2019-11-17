@@ -76,14 +76,14 @@ class MobileMenu extends Component {
 
     render() {
         const { categories } = this.state;
-        const firstCat = categories.length > 0 ? categories[0].name : '';
+        const firstCat = categories.length > 0 ? categories[0] : {};
         const slicedCats = categories.slice(1, categories.length);
 
         return (
             <header role="complementary" className="main-head">
                 <div id="menu-mobile">
                     <div className="menu-mobile-brand">
-                        <Link to="/products" role="navigation" className="items" title={firstCat} onClick={() => this.props.simplifiedFunction()}>{firstCat}</Link>
+                        <Link to="/products" role="navigation" className="items" title={firstCat} onClick={() => this.props.simplifiedFunction(firstCat.id)}>{firstCat.name}</Link>
                         <i className="fa fa-angle-down icon" data-toggle="collapse" data-target="#navbarCollapse"> </i>
                     </div>
 
