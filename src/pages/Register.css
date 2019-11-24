@@ -24,6 +24,13 @@
     grid-template-rows: auto;
 }
 
+.register-error {
+    color: red;
+    font-family: "Dosis", "Arial";
+    font-weight: 800;
+    font-size: 16px;
+}
+
 .sign-form-input {
     width: 100%;
     padding: 12px 20px;

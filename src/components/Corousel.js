@@ -42,7 +42,7 @@ export default class ControlledCarousel extends Component {
 
         return (
 
-            <Carousel autoplay={true}>
+            <Carousel autoplay={false}>
 
                 {urlsList}
 
