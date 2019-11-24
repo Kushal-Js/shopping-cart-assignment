@@ -14,7 +14,7 @@ class Header extends Component {
                         <img src="./static/images/logo.png" alt="Sabka Bazaar"></img>
                     </Link>
 
-                    <span className="header-app-links" id="header-app-links">
+                    <span className="header-app-links">
                         <Link role="navigation" to="/home" className="header-links"><b>Home</b></Link>
                         <Link role="navigation" to="/products" className="header-links"><b>Products</b></Link>
                     </span>

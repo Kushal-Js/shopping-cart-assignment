@@ -14,7 +14,7 @@
 .login-container {
     display: grid;
     padding: 20px;
-    margin: 30px;
+    margin: 20px;
     justify-content: center;
     grid-template-areas: 
     "login-info login-form-container";
@@ -47,4 +47,10 @@
     box-sizing: unset;
     border: none;
     border-bottom: 1px solid grey;
+  }
+
+  @media screen and (max-width: 600px) {
+    .login-info {
+        display: none;
+    }
   }

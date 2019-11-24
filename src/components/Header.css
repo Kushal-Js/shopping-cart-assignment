@@ -9,7 +9,7 @@
 
   }
 
-  .header-brand{
+  .header-brand {
     display: grid;
     gap: 10px;
     grid-auto-flow: column;
@@ -57,10 +57,6 @@
   }
 
   .header-links {
-    /* display: grid;
-    grid-auto-flow: column;
-    justify-content: end;
-    gap: 10px; */
     display: flex;
     margin-left: 20px;
     flex-direction: column;
@@ -80,7 +76,11 @@
   }
 
   @media screen and (max-width: 600px) {
-    #header-app-links {
+    .header-brand a > img {
+      height: 100px;
+      width: 150px;
+    }
+    .header-app-links {
         display: none;
     }
   }

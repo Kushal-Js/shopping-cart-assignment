@@ -52,7 +52,7 @@ class Home extends Component {
               <img src={`.` + item.imageUrl} alt=""></img>
               </span>
               <span className="description-wrapper">
-                <h3>{item.name}</h3>
+                <h4>{item.name}</h4>
                 <p>{item.description}</p>
                 <button role="navigation" onClick={() => this.navigate(item.id)} className="w3-button w3-pink" type="button">{`Explore `+ item.name}</button>
               </span>
