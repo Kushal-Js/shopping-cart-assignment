@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Link } from "react-router-dom";
-import Cart from '../components/Cart';
+import Cart from '../molecules/Cart';
 import { CartConsumer } from '../shared/cart-context';
 import './Header.css';
 

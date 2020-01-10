@@ -6,5 +6,8 @@ export default {
     },
     labels: {
         buyNow : "Buy Now"
+    },
+    text: {
+        footerText : "Copyright @2011-2018 Sabka Bazaar Grocery Supplies Pvt Ltd"
     }
 }

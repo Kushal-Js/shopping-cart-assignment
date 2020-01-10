@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
-import Header from './components/Header';
-import Footer from './components/Footer';
-import Login from './pages/Login';
-import Register from './pages/Register';
-import Home from './pages/Home';
-import Products from './pages/Products';
+import Header from './molecules/Header';
+import Footer from './atoms/Footer';
+import Login from './organisms/Login';
+import Register from './organisms/Register';
+import Home from './organisms/Home';
+import Products from './organisms/Products';
 import { CartProvider } from './shared/cart-context';
 import { CategoryProvider } from './shared/category-context';
 import './App.css';

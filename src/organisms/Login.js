@@ -78,7 +78,7 @@ class Login extends Component {
                         </div>
 
                         <div id="pswdContainer" className="login-input">
-                            <TextField id="floating-center-title" label="Password" onChange={this.validatePwd} linedirection="center" className="md-cell md-cell--bottom" required />
+                            <TextField id="floating-center-title" type="password" label="Password" onChange={this.validatePwd} linedirection="center" className="md-cell md-cell--bottom" required />
                             {this.state.showPwdError ?
                                 (<span className="login-error">{commom.errors.pwdError}</span>) :
                                 (<span></span>)}

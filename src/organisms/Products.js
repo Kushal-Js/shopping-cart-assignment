@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import axios from 'axios';
-import { Menu, MobileMenu } from '../components/Menu';
-import List from '../components/List';
+import { Menu, MobileMenu } from '../molecules/Menu';
+import List from '../molecules/List';
 import './Products.css';
 
 class Products extends Component {

@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { withRouter } from "react-router-dom";
 import axios from 'axios';
 // import ImageSlider from '../components/ImageSlider';
-import ControlledCarousel from '../components/Corousel';
+import ControlledCarousel from '../molecules/Corousel';
 import { CategoryContext } from '../shared/category-context';
 import './Home.css';
 
