@@ -72,17 +72,17 @@ class Login extends Component {
                     <form action="/home" className="login-form">
                         <div id="emailContainer" className="login-input">
                             <TextField id="floating-center-title" label="Email" onChange={this.validateEmail} linedirection="center" className="md-cell md-cell--bottom" required />
-                            {this.state.showEmailError ?
+                        </div>
+                        {this.state.showEmailError ?
                                 (<span className="login-error">{commom.errors.emailError}</span>) :
                                 (<span></span>)}
-                        </div>
 
                         <div id="pswdContainer" className="login-input">
                             <TextField id="floating-center-title" type="password" label="Password" onChange={this.validatePwd} linedirection="center" className="md-cell md-cell--bottom" required />
-                            {this.state.showPwdError ?
+                        </div>
+                        {this.state.showPwdError ?
                                 (<span className="login-error">{commom.errors.pwdError}</span>) :
                                 (<span></span>)}
-                        </div>
 
                         <button disabled={!this.state.isValid} className="login-button w3-button w3-pink" type="submit">Login</button>
                     </form>

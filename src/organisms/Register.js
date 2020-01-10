@@ -102,22 +102,24 @@ validateCnfPwd(event) {
             </div>
             <div id="emailContainer" className="login-input">
               <TextField id="floating-center-title" label="Email" onChange={this.validateEmail} linedirection="center" className="md-cell md-cell--bottom" required />
-              {this.state.showEmailError ?
+            </div>
+            {this.state.showEmailError ?
                   (<span className="register-error">{commom.errors.emailError}</span>) :
                   (<span></span>)}
-            </div>
+
             <div id="pswdContainer" className="login-input">
               <TextField id="floating-center-title" label="Password" type="password" onChange={this.validatePwd} linedirection="center" className="md-cell md-cell--bottom" required />
-              {this.state.showPwdError ?
+            </div>
+            {this.state.showPwdError ?
                   (<span className="register-error">{commom.errors.pwdError}</span>) :
                   (<span></span>)}
-            </div>
+
             <div id="confPswdContainer" className="login-input">
               <TextField id="floating-center-title" label="Confirm Password" type="password" onChange={this.validateCnfPwd} linedirection="center" className="md-cell md-cell--bottom" required />
-              {this.state.showCnfPwdError ?
+            </div>
+            {this.state.showCnfPwdError ?
                   (<span className="register-error">{commom.errors.cnfPwdError}</span>) :
                   (<span></span>)}
-            </div>
 
             <button disabled={!this.state.isValid} className="login-button w3-button w3-pink" type="submit">Signup</button>
           </form>
