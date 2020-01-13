@@ -6,7 +6,7 @@
     gap: 20px;
     z-index: 1;
     box-shadow: 0px 5px 5px -4px #aaaaaa;
-
+    padding-bottom: 0px;
   }
 
   .header-brand {
@@ -64,21 +64,20 @@
     text-decoration: none;
   }
 
-  .header-basket > span img {
+  .header-basket > button img {
     height: 60px;
     width: 60px;
   }
 
   .cart {
-    padding-bottom: -20px;
-    margin-bottom: -20px;
+    border: none;
     background-color: var(--background-color);
   }
 
   @media screen and (max-width: 600px) {
     .header-brand a > img {
-      height: 100px;
-      width: 150px;
+      height: 80px;
+      width: 120px;
     }
     .header-app-links {
         display: none;

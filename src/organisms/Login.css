@@ -1,20 +1,15 @@
 .login-info {
     grid-area: login-info;
-       /* display: grid;
-       grid-template-rows: auto;
-       justify-content: center; */
 }
 
 .login-form-container {
     grid-area: login-form-container;
-    /* display: grid;
-    grid-template-columns: auto auto; */
 }
 
 .login-container {
     display: grid;
     padding: 20px;
-    margin: 20px;
+    /* margin: 20px; */
     justify-content: center;
     grid-template-areas: 
     "login-info login-form-container";
@@ -24,12 +19,13 @@
 .login-error {
     color: red;
     font-family: "Dosis", "Arial";
-    font-weight: 800;
-    font-size: 16px;
+    font-weight: 500;
+    font-size: 14px;
 }
 
 .login-button {
     background-color: var(--pink);
+    width: 200px;
     color: black
 }
 
@@ -50,7 +46,17 @@
   }
 
   @media screen and (max-width: 600px) {
-    .login-info {
+    /* .login-info {
         display: none;
+    } */
+    .login-container {
+        display: grid;
+        padding: 20px;
+        /* margin: 20px; */
+        justify-content: center;
+        grid-template-areas: 
+        "login-info login-info"
+        "login-form-container login-form-container";
+        gap: 20px;
     }
   }

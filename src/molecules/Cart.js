@@ -28,12 +28,12 @@ class Cart extends Component {
     render() {
         return (
 
-            <div className="modal fade" id="myModal">
+            <div role="dialog" className="modal fade" id="myModal">
                 <div className="modal-dialog modal-dialog-centered">
                     <div className="modal-content">
 
 
-                        <div className="modal-header" id="cart-header">
+                        <div tabIndex="1" className="modal-header" id="cart-header">
                             <h4 className="modal-title text-white"><b>My Cart</b>
                                 <CartConsumer>
                                     {({ cart }) => (
@@ -60,19 +60,19 @@ class Cart extends Component {
 
                                                         return (
                                                             <div key={item.id} className="modal-body-item">
-                                                                <span>
+                                                                <div>
                                                                     <img className="modal-body-item-image" src={`.` + item.value.imageURL} alt=""></img>
-                                                                </span>
+                                                                </div>
 
-                                                                <span>
+                                                                <div>
                                                                     <h3 className="item-text">{item.value.name}</h3>
-                                                                    <span className="quantity-box">
-                                                                        <span className="dot w3-pink" onClick={() => this.reduceItem(item)}><i className="fa fa-minus"></i></span>
-                                                                         {item.count} <span className="dot w3-pink" onClick={() => this.increaseItem(item)}><i className="fa fa-plus"></i></span>
+                                                                    <div className="quantity-box">
+                                                                        <button className="dot w3-pink" onClick={() => this.reduceItem(item)}><i className="fa fa-minus"></i></button>
+                                                                         {item.count} <button className="dot w3-pink" onClick={() => this.increaseItem(item)}><i className="fa fa-plus"></i></button>
                                                                          <i className="fa fa-times" aria-hidden="true"></i>
                                                                          Rs.{item.value.price}
-                                                                    </span>
-                                                                </span>
+                                                                    </div>
+                                                                </div>
 
                                                                 <span className="total-amount">
                                                                     Rs.{item.total}
@@ -91,11 +91,11 @@ class Cart extends Component {
                                     : (
                                         <div className="modal-body-empty">
                                             <div className="modal-body-no-item">
-                                                <span>
+                                                <div>
                                                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                                                     <b>No items in your cart</b><br />
                                                     Your favourite items are just a click away
-                                                </span>
+                                                </div>
                                             </div>
                                         </div>)
                             )}
@@ -107,10 +107,10 @@ class Cart extends Component {
                                     (<div className="modal-footer">
                                         <span>Promo code can be applied on payment page</span>
 
-                                        <div className="btn-checkout w3-button w3-pink" data-dismiss="modal">
+                                        <button className="btn-checkout w3-button w3-pink" data-dismiss="modal">
                                             <span className="btn-checkout-message">Proceed to checkout</span>
                                             <span className="btn-checkout-amount">{`Rs${getGrossTotal()}   >`}</span>
-                                        </div>
+                                        </button>
 
                                     </div>)
                                     : (

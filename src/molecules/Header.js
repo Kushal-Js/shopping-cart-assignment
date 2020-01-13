@@ -9,30 +9,30 @@ class Header extends Component {
     render() {
         return (
             <header role="banner" className="app-header">
-                <div role="main heading" className="header-brand">
+                <div className="header-brand">
                     <Link role="navigation" to="/home">
                         <img src="./static/images/logo.png" alt="Sabka Bazaar"></img>
                     </Link>
 
-                    <span className="header-app-links">
+                    <div className="header-app-links">
                         <Link role="navigation" to="/home" className="header-links"><b>Home</b></Link>
                         <Link role="navigation" to="/products" className="header-links"><b>Products</b></Link>
-                    </span>
+                    </div>
                 </div>
 
-                <div role="main heading" className="header-basket">
-                    <span className="header-basket-links">
+                <div className="header-basket">
+                    <div className="header-basket-links">
                         <Link role="navigation" to="/login" className="reg-links">SignIn</Link>
                         <Link role="navigation" to="/register" className="reg-links">Register</Link>
-                    </span>
-                    <span className="cart">
+                    </div>
+                    <button className="cart">
                         <img src="./static/images/cart.svg" alt="Sabka Bazaar Cart" data-toggle="modal" data-target="#myModal"></img>
                         <CartConsumer>
                             {({ cart }) => (
                                 <span>{cart.length + ` items`}</span>
                             )}
                         </CartConsumer>
-                    </span>
+                    </button>
                 </div>
                 <Cart />
             </header>

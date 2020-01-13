@@ -103,23 +103,29 @@ validateCnfPwd(event) {
             <div id="emailContainer" className="login-input">
               <TextField id="floating-center-title" label="Email" onChange={this.validateEmail} linedirection="center" className="md-cell md-cell--bottom" required />
             </div>
+            <div className="login-input" aria-describedby="info">
             {this.state.showEmailError ?
-                  (<span className="register-error">{commom.errors.emailError}</span>) :
+                  (<span id="info" className="register-error">{commom.errors.emailError}</span>) :
                   (<span></span>)}
+            </div>
 
             <div id="pswdContainer" className="login-input">
               <TextField id="floating-center-title" label="Password" type="password" onChange={this.validatePwd} linedirection="center" className="md-cell md-cell--bottom" required />
             </div>
+            <div aria-describedby="info" className="login-input">
             {this.state.showPwdError ?
-                  (<span className="register-error">{commom.errors.pwdError}</span>) :
+                  (<p id="info" className="register-error">{commom.errors.pwdError}<br />{commom.errors.pwdError2}</p>) :
                   (<span></span>)}
+            </div>
 
             <div id="confPswdContainer" className="login-input">
               <TextField id="floating-center-title" label="Confirm Password" type="password" onChange={this.validateCnfPwd} linedirection="center" className="md-cell md-cell--bottom" required />
             </div>
+            <div aria-describedby="info" className="login-input">
             {this.state.showCnfPwdError ?
-                  (<span className="register-error">{commom.errors.cnfPwdError}</span>) :
+                  (<p id="info" className="register-error">{commom.errors.cnfPwdError}<br />{commom.errors.cnfPwdError2}</p>) :
                   (<span></span>)}
+            </div>
 
             <button disabled={!this.state.isValid} className="login-button w3-button w3-pink" type="submit">Signup</button>
           </form>

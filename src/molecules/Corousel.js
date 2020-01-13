@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Carousel from 'nuka-carousel';
+import './Corousel.css';
 
 export default class ControlledCarousel extends Component {
     constructor(props) {
@@ -45,7 +46,7 @@ export default class ControlledCarousel extends Component {
             <Carousel autoplay={false}>
 
                 {urlsList}
-
+ 
             </Carousel>
 
         );

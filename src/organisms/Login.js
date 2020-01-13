@@ -73,18 +73,24 @@ class Login extends Component {
                         <div id="emailContainer" className="login-input">
                             <TextField id="floating-center-title" label="Email" onChange={this.validateEmail} linedirection="center" className="md-cell md-cell--bottom" required />
                         </div>
-                        {this.state.showEmailError ?
-                                (<span className="login-error">{commom.errors.emailError}</span>) :
+                        <div className="login-input" aria-describedby="info">
+                            {this.state.showEmailError ?
+                                (<span id="info" className="login-error">{commom.errors.emailError}</span>) :
                                 (<span></span>)}
+                        </div>
 
                         <div id="pswdContainer" className="login-input">
                             <TextField id="floating-center-title" type="password" label="Password" onChange={this.validatePwd} linedirection="center" className="md-cell md-cell--bottom" required />
                         </div>
-                        {this.state.showPwdError ?
-                                (<span className="login-error">{commom.errors.pwdError}</span>) :
+                        <div className="login-input" aria-describedby="info">
+                            {this.state.showPwdError ?
+                                (<p id="info" className="login-error">{commom.errors.pwdError}<br />{commom.errors.pwdError2}</p>) :
                                 (<span></span>)}
+                        </div>
 
-                        <button disabled={!this.state.isValid} className="login-button w3-button w3-pink" type="submit">Login</button>
+                        <div>
+                            <button disabled={!this.state.isValid} className="login-button w3-button w3-pink" type="submit">Login</button>
+                        </div>
                     </form>
                 </div>
 

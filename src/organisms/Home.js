@@ -21,9 +21,9 @@ class Home extends Component {
     const user = this.context;
     const categories = user.categories;
     if (user.categories.length === 0) {
-        this.getList();
+      this.getList();
     } else {
-        this.setState({ categories: categories });
+      this.setState({ categories: categories });
     }
   }
 
@@ -45,27 +45,40 @@ class Home extends Component {
           <ControlledCarousel />
         </article>
         <div className="home-wrapper">
-        {categories.map((item) => {
-          return (
-            <article key={item.key} className="product-wrapper">
-              <span className="description-image">
-              <img src={`.` + item.imageUrl} alt=""></img>
-              </span>
-              <span className="description-wrapper">
-                <h4>{item.name}</h4>
-                <p>{item.description}</p>
-                <button role="navigation" onClick={() => this.navigate(item.id)} className="w3-button w3-pink" type="button">{`Explore `+ item.name}</button>
-              </span>
-            </article>
-          )
-        })}
+          {categories.map((item, index) => {
+            if (index % 2 === 0) {
+              return (
+                <article key={item.key} className="product-wrapper">
+                  <img className="description-image" src={`.` + item.imageUrl} alt=""></img>
+                  <div className="description-wrapper">
+                    <h5>{item.name}</h5>
+                    <p>{item.description}</p>
+                    <button role="navigation" onClick={() => this.navigate(item.id)} className="w3-button w3-pink" type="button">{`Explore ` + item.name}</button>
+                  </div>
+                </article>
+              )
+            }
+            else {
+              return (
+                <article key={item.key} className="product-wrapper">
+                  <div className="description-wrapper">
+                    <h5>{item.name}</h5>
+                    <p>{item.description}</p>
+                    <button role="navigation" onClick={() => this.navigate(item.id)} className="w3-button w3-pink" type="button">{`Explore ` + item.name}</button>
+                  </div>
+                  <img className="description-image" src={`.` + item.imageUrl} alt=""></img>
+                </article>
+              )
+            }
+
+          })}
         </div>
-      </div>  
+      </div>
     );
   }
 
   navigate(catId) {
-    this.props.history.push('/products', {catId});
+    this.props.history.push('/products', { catId });
   }
 }
 

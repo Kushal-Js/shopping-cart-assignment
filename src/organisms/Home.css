@@ -16,31 +16,32 @@
   display: grid;
   grid-template-columns: auto auto;
   gap: 10px;
-  padding: 20px;
-  margin: 20px;
-  grid-template-areas: "description-image description-wrapper";
+  /* padding: 20px;
+  margin: 20px; */
 }
 
 .description-image {
   display: grid;
-  padding: 10px;
-  margin: 10px;
+  /* padding: 10px;
+  margin: 10px; */
   grid-template-columns: auto;
   justify-content: center;
   align-items: center;
-  grid-area: description-image;
 }
 
 .description-wrapper {
   display: flex;
-  padding: 10px;
-  margin: 10px;
+  /* padding: 10px;
+  margin: 10px; */
   flex-direction: column;
   /* grid-template-rows: auto; */
   justify-content: center;
   align-items: center;
-  grid-area: description-wrapper;
   /* min-width: 200px; */
+}
+
+.description-wrapper > p {
+  text-align: center;
 }
 
 .home-wrapper > article {
@@ -53,13 +54,13 @@
   .home-wrapper > article img {
     width: 300px;
     height: 250px;
-    margin: 10px;
   }
 
   @media screen and (max-width: 600px) {
     .home-wrapper > article img {
       width: 170px;
       height: 140px;
+      margin: 10px;
     }
     .home-wrapper > article {
       margin: 10px;
@@ -68,7 +69,7 @@
       margin: 10px;
       padding: 5px;
       font-family: "Dosis", "Arial";
-      font-weight: 400;
+      font-weight: 600;
       font-size: 14px;
     }
     .description-wrapper p {
@@ -78,28 +79,29 @@
 
   @media screen and (max-width: 450px) {
     .home-wrapper > article img {
-      width: 120px;
+      width: 110px;
       height: 100px;
     }
     .home-wrapper > article {
       margin: 10px;
     }
     .description-wrapper {
-      margin: 10px;
-      padding: 5px;
+      /* margin: 10px;
+      padding: 5px; */
       font-family: "Dosis", "Arial";
-      font-weight: 400;
+      font-weight: 600;
       font-size: 12px;
+      text-align: center;
     }
     .description-wrapper p {
       margin: 10px;
     }
   }
 
-  .home-wrapper article:nth-child(even) {
+  /* .home-wrapper article:nth-child(even) {
     grid-template-areas: "description-image description-wrapper";
   }
 
   .home-wrapper article:nth-child(odd) {
     grid-template-areas: "description-wrapper description-image";
-  }
+  } */

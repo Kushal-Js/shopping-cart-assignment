@@ -73,6 +73,17 @@ export class CartProvider extends React.Component {
           temp[index].total = this.getTotal(updatedCount, value.value);
           this.setState({ cart: [...temp] });
           }
+          if (temp[index].count === 0) {
+            // delete from cart
+            const itemsRemaining = temp.filter((item) => {
+              return value.id !== item.id
+            });
+            // let updatedCount = --temp[index].count;
+            
+            // temp[index].count = updatedCount;
+            // temp[index].total = this.getTotal(updatedCount, value.value);
+            this.setState({ cart: [...itemsRemaining] });
+            }
         }
       })
     }
