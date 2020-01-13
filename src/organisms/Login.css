@@ -1,5 +1,10 @@
 .login-info {
+    margin-top: 40px;
     grid-area: login-info;
+}
+
+.login-info-mob {
+    display: none;
 }
 
 .login-form-container {
@@ -46,17 +51,19 @@
   }
 
   @media screen and (max-width: 600px) {
-    /* .login-info {
+    .login-info {
         display: none;
-    } */
-    .login-container {
+    }
+    .login-info-mob {
+        display: block;
+    }
+    /* .login-container {
         display: grid;
         padding: 20px;
-        /* margin: 20px; */
         justify-content: center;
         grid-template-areas: 
         "login-info login-info"
         "login-form-container login-form-container";
         gap: 20px;
-    }
+    } */
   }

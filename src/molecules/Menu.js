@@ -35,13 +35,15 @@ class Menu extends Component {
         const { categories } = this.state;
         return (
             <aside className="main-nav">
+                <ul>
                 {categories.map((item, index) => {
                     return (
-                        <span key={index}>
+                        <li key={index}>
                             <Link to="/products" role="navigation" title={item.name} className="main-nav-links" onClick={() => this.props.simplifiedFunction(item.id)}>{item.name}</Link>
-                        </span>
+                        </li>
                     )
                 })}
+                </ul>
             </aside>
         );
     }
@@ -88,16 +90,16 @@ class MobileMenu extends Component {
                     </div>
 
                     <div className="collapse navbar-collapse" id="navbarCollapse">
-                        <div className="navbar-nav">
+                        <ul className="navbar-nav">
                             {slicedCats.map((item) => {
                                 return (
-                                    <span key={item.key}>
+                                    <li key={item.key}>
                                         <Link to="/products" role="navigation" title={item.name} className="main-nav-links" onClick={() => this.props.simplifiedFunction(item.id)}>
                                             {item.name}</Link>
-                                    </span>
+                                    </li>
                                 )
                             })}
-                        </div>
+                        </ul>
                     </div>
                 </div>
             </header>

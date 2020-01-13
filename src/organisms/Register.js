@@ -93,6 +93,10 @@ class Login extends Component {
         </div>
 
         <div className="login-form-container">
+        <div className="login-info-mob">
+          <span className="login-text"><h2>Signup</h2></span>
+          <span>We don not share your personal details with anyone.</span>
+        </div>
           <form action="/home" className="register-form">
             <div id="firstNameContainer" className="login-input">
               <TextField id="floating-center-title" label="First Name" linedirection="center" className="md-cell md-cell--bottom" required />
