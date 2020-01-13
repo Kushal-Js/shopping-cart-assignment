@@ -1,11 +1,10 @@
 .list { 
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-    /* grid-template-columns: auto auto auto auto; */
-    /* grid-template-columns: repeat(4, 1fr); */
     grid-gap: 20px;
     align-items: stretch;
     }
+
   .list > article {
     border-bottom: 1px dotted #ccc;
     /* box-shadow: 2px 0px 0px 0px #888888; */
@@ -34,7 +33,7 @@
   }
   .item-text-block {
     display: block;
-    height: 320px;
+    height: 300px;
     /* height: auto; */
     margin-top: 10px;
     margin-bottom: 10px;
