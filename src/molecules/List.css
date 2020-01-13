@@ -1,6 +1,8 @@
 .list { 
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    /* grid-template-columns: auto auto auto auto; */
+    /* grid-template-columns: repeat(4, 1fr); */
     grid-gap: 20px;
     align-items: stretch;
     }
@@ -25,9 +27,9 @@
   .buy-area {
     display: flex;
     flex-direction: row;
-    margin-left: -45px;
-    margin-right: -45px;
-    justify-content: space-evenly;
+    /* margin-left: -45px;
+    margin-right: -45px; */
+    justify-content: space-between;
     align-items: center;
   }
   .item-text-block {
@@ -44,4 +46,13 @@
       font-weight: 400;
       font-size: 16px;
       
+  }
+
+  @media screen and (min-width: 1024px) {
+    .list { 
+      display: grid;
+      grid-template-columns: repeat(4, minmax(200px, 1fr));
+      grid-gap: 20px;
+      align-items: stretch;
+      }
   }

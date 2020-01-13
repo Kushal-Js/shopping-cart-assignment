@@ -101,6 +101,19 @@
     display: inline-block;
   }
 
+  .cart-icon {
+    /* position: absolute; */
+    margin-top: 5px;
+    top: 50%;
+    left: 50%;
+    height: 50%;
+    transform: translate(-50%, -50%);
+    width: 10px;
+    height: 10px;
+    display: block;
+    /* background: red; */
+  }
+
 .modal-footer {
     display: grid;
     align-content: stretch;
@@ -117,21 +130,21 @@
 }
 
 .btn-checkout {
-    display: grid;
-    grid-template-columns: auto 1fr auto;
+    height: 40px;
+    /* display: grid;
+    grid-template-columns: auto 1fr auto; */
+    display: flex;
+    justify-content: space-between
+    
 }
 
 .btn-checkout-mesage {
-    /* display: flex;
-    flex-direction: row;
-    justify-content: flex-start;
-    align-items: flex-start; */
-    display: grid;
-    align-self: flex-start;
+    display: flex;
+    /* align-self: flex-start; */
 }
 
 .btn-checkout-amount {
     display: flex;
-    flex-direction: row;
-    justify-content: flex-end;
+    /* flex-direction: row; */
+    /* justify-content: flex-end; */
 }

@@ -67,8 +67,8 @@ class Cart extends Component {
                                                                 <div>
                                                                     <h3 className="item-text">{item.value.name}</h3>
                                                                     <div className="quantity-box">
-                                                                        <button className="dot w3-pink" onClick={() => this.reduceItem(item)}><i className="fa fa-minus"></i></button>
-                                                                         {item.count} <button className="dot w3-pink" onClick={() => this.increaseItem(item)}><i className="fa fa-plus"></i></button>
+                                                                        <button className="dot w3-pink" onClick={() => this.reduceItem(item)}><i className="cart-icon fa fa-minus"></i></button>
+                                                                         {item.count} <button className="dot w3-pink" onClick={() => this.increaseItem(item)}><i className="cart-icon fa fa-plus"></i></button>
                                                                          <i className="fa fa-times" aria-hidden="true"></i>
                                                                          Rs.{item.value.price}
                                                                     </div>
