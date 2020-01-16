@@ -8,7 +8,7 @@ class Footer extends Component {
 
       <footer role="contentinfo" id="sticky-footer" className="bg-light">
         <div className="container footer-text">
-          <span className="text-body">{commom.text.footerText}</span>
+          <span className="footer-text-body">{commom.text.footerText}</span>
         </div>
       </footer>
 
