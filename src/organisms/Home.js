@@ -44,13 +44,13 @@ class Home extends Component {
         <article className="corousel-justifier">
           <ControlledCarousel />
         </article>
-        <div className="home-wrapper">
+        <div className="home">
           {categories.map((item, index) => {
             if (index % 2 === 0) {
               return (
-                <article key={item.key} className="product-wrapper">
-                  <img className="description-image" src={`.` + item.imageUrl} alt=""></img>
-                  <div className="description-wrapper">
+                <article key={item.key} className="home__category">
+                  <img className="category__image" src={`.` + item.imageUrl} alt=""></img>
+                  <div className="category__description-wrapper">
                     <h5>{item.name}</h5>
                     <p>{item.description}</p>
                     <button role="navigation" onClick={() => this.navigate(item.id)} className="w3-button w3-pink" type="button">{`Explore ` + item.name}</button>
@@ -60,13 +60,13 @@ class Home extends Component {
             }
             else {
               return (
-                <article key={item.key} className="product-wrapper">
-                  <div className="description-wrapper">
+                <article key={item.key} className="home__category">
+                  <div className="category__description-wrapper">
                     <h5>{item.name}</h5>
                     <p>{item.description}</p>
                     <button role="navigation" onClick={() => this.navigate(item.id)} className="w3-button w3-pink" type="button">{`Explore ` + item.name}</button>
                   </div>
-                  <img className="description-image" src={`.` + item.imageUrl} alt=""></img>
+                  <img className="category__image" src={`.` + item.imageUrl} alt=""></img>
                 </article>
               )
             }
