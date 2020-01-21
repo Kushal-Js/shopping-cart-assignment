@@ -1,42 +1,59 @@
-.login-info {
+.register__info {
     margin-top: 40px;
-    grid-area: login-info;
+    grid-area: register__info;
 }
 
-.login-form-container {
-    grid-area: login-form-container;
+.register__info-mob {
+    display: none;
 }
 
-.login-container {
+.register__form-container {
+    grid-area: register__form-container;
+}
+
+.register {
     display: grid;
-    padding: 10px;
+    padding: 20px;
     justify-content: center;
     grid-template-areas: 
-    "login-info login-form-container";
+    "register__info register__form-container";
     gap: 20px;
 }
 
-.register-form {
-    display: grid;
-    gap: 20px;
-    padding: 20px;
-    justify-content: stretch;
-    align-items: stretch;
-    grid-template-rows: auto;
-}
-
-.register-error {
+.register-form__register-error {
     color: red;
     font-family: "Dosis", "Arial";
     font-weight: 500;
     font-size: 14px;
 }
 
-.sign-form-input {
+.register-form__register-button {
+    background-color: var(--pink);
+    width: 200px;
+    color: black
+}
+
+.register__register-form {
+    display: grid;
+    gap: 20px;
+    justify-content: stretch;
+    grid-template-rows: auto;
+}
+
+.register-form__register-input {
     width: 100%;
     padding: 12px 20px;
     margin: 8px 0;
     box-sizing: unset;
     border: none;
     border-bottom: 1px solid grey;
+  }
+
+  @media screen and (max-width: 600px) {
+    .register__info {
+        display: none;
+    }
+    .register__info-mob {
+        display: block;
+    }
   }

@@ -1,57 +1,96 @@
-.list { 
+.product-list__list { 
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
     grid-gap: 20px;
     align-items: stretch;
     }
 
-  .list > article {
+  .product-list__list > article {
     border-bottom: 1px dotted #ccc;
-    /* box-shadow: 2px 0px 0px 0px #888888; */
     box-shadow: 8px 3px 11px -7px #aaaaaa;
   }
-  .list > article img {
+  .product-list__list > article img {
     max-width: 100%;
   }
-  .product-item {
+  .product-list__product-item {
     display: flex;
     flex-direction: row;
   }
-  .item-name {
+  .product-item__item-name {
     height: 90px;
   }
-  .text {
+  .product-item__wrapper {
     padding: 0 20px 20px;
   }
-  .buy-area {
+  .product-item__buy {
     display: flex;
     flex-direction: row;
-    /* margin-left: -45px;
-    margin-right: -45px; */
     justify-content: space-between;
     align-items: center;
   }
-  .item-text-block {
+  .product-item__item-text-block {
     display: block;
-    height: 300px;
-    /* height: auto; */
+    /* height: 400px; */
     margin-top: 10px;
     margin-bottom: 10px;
-    background-color: var(--background-color)
+    padding: 5px;
+    background-color: var(--background-color);
+    font-family: "Dosis", "Arial";
+    font-weight: 400;
+    font-size: 16px;
   }
 
     .list-item-text {
       font-family: "Dosis", "Arial";
       font-weight: 400;
       font-size: 16px;
-      
   }
 
   @media screen and (min-width: 1024px) {
-    .list { 
+    .product-list__list { 
       display: grid;
       grid-template-columns: repeat(4, minmax(200px, 1fr));
       grid-gap: 20px;
       align-items: stretch;
       }
+  }
+
+  @media screen and (max-width: 320px) {
+    .product-item__item-text-block {
+      display: block;
+      height: 180px;
+      margin-top: 10px;
+      margin-bottom: 10px;
+      background-color: var(--background-color)
+    }
+  }
+
+  @media screen and (max-width: 375px) {
+    .product-item__item-text-block {
+      display: block;
+      height: 160px;
+      margin-top: 10px;
+      margin-bottom: 10px;
+      background-color: var(--background-color)
+    }
+  }
+
+  @media screen and (max-width: 768px) {
+    .product-item__item-text-block {
+      display: block;
+      height: 190px;
+      margin-top: 10px;
+      margin-bottom: 10px;
+      background-color: var(--background-color)
+    }
+  }
+
+  @media screen and (max-width: 1440px) {
+    .product-item__item-text-block {
+      display: block;
+      height: 300px;
+      margin-top: 10px;
+      margin-bottom: 10px;
+      background-color: var(--background-color)
+    }
   }

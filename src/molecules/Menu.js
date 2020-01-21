@@ -34,12 +34,12 @@ class Menu extends Component {
     render() {
         const { categories } = this.state;
         return (
-            <aside className="main-nav">
+            <aside className="app__main-nav">
                 <ul>
                 {categories.map((item, index) => {
                     return (
                         <li key={index}>
-                            <Link to="/products" role="navigation" title={item.name} className="main-nav-links" onClick={() => this.props.simplifiedFunction(item.id)}>{item.name}</Link>
+                            <Link to="/products" role="navigation" title={item.name} className="app_main-nav-links" onClick={() => this.props.simplifiedFunction(item.id)}>{item.name}</Link>
                         </li>
                     )
                 })}
@@ -82,9 +82,9 @@ class MobileMenu extends Component {
         const slicedCats = categories.slice(1, categories.length);
 
         return (
-            <header role="complementary" className="main-head">
-                <div id="menu-mobile">
-                    <div className="menu-mobile-brand">
+            <header role="complementary" className="app__main-head">
+                <div id="app__menu-mobile">
+                    <div className="app__menu-mobile-brand">
                         <Link to="/products" role="navigation" className="items" title={firstCat} onClick={() => this.props.simplifiedFunction(firstCat.id)}>{firstCat.name}</Link>
                         <i className="fa fa-angle-down icon" data-toggle="collapse" data-target="#navbarCollapse"> </i>
                     </div>
@@ -94,13 +94,18 @@ class MobileMenu extends Component {
                             {slicedCats.map((item) => {
                                 return (
                                     <li key={item.key}>
-                                        <Link to="/products" role="navigation" title={item.name} className="main-nav-links" onClick={() => this.props.simplifiedFunction(item.id)}>
+                                        <Link to="/products" role="navigation" title={item.name} className="app__main-nav-links" onClick={() => this.props.simplifiedFunction(item.id)}>
                                             {item.name}</Link>
                                     </li>
                                 )
                             })}
                         </ul>
                     </div>
+                    {/* <select>
+                    <option value="Orange">Orange</option>
+                    <option value="Radish">Radish</option>
+                    <option value="Cherry">Cherry</option>
+                    </select> */}
                 </div>
             </header>
         );

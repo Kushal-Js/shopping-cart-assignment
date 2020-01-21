@@ -1,10 +1,10 @@
-.main-head {
+.app__main-head {
     background-color: rgb(211, 97, 116);
     padding: 10px;
     grid-area: header;
   }
 
-  .menu-mobile-brand {
+  .app__menu-mobile-brand {
       display: grid;
       margin-left: 10px;
       grid-template-columns: auto auto;  /* grid has two columns; content defines width */
@@ -14,27 +14,27 @@
   .content {
     grid-area: content;
   }
-  .main-nav {
+  .app__main-nav {
     background-color: var(--background-color);
     display: grid;
     grid-area: nav;
   }
 
-  .main-nav li {
+  .app__main-nav li {
     list-style-type: none;
     background-color: rgb(211, 97, 116);
 }
 
-  .main-nav ul li {
+  .app__main-nav ul li {
     padding: 10px;
     border-bottom: 1px solid black;
   }
 
-  .main-nav-links {
+  .app__main-nav-links {
     padding: 10px;
     text-decoration: none;
   }
 
-  .main-nav-links:hover {
+  .app__main-nav-links:hover {
     text-decoration: none;
   }

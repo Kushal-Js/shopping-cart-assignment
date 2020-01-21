@@ -61,39 +61,39 @@ class Login extends Component {
 
     render() {
         return (
-            <div className="login-container">
+            <div className="login">
 
-                <div className="login-info">
+                <div className="login__info">
                     <h2>Login</h2>
                     <span>Get access to your Orders, Wishlist and Recommendations</span>
                 </div>
 
-                <div className="login-form-container">
-                <div className="login-info-mob">
+                <div className="login__form-container">
+                <div className="login__info-mob">
                     <h2>Login</h2>
                     <span>Get access to your Orders, Wishlist and Recommendations</span>
                 </div>
-                    <form action="/home" className="login-form">
-                        <div id="emailContainer" className="login-input">
+                    <form action="/home" className="login__login-form">
+                        <div id="emailContainer" className="login-form__login-input">
                             <TextField id="floating-center-title" label="Email" onChange={this.validateEmail} linedirection="center" className="md-cell md-cell--bottom" required />
                         </div>
-                        <div className="login-input" aria-describedby="info">
+                        <div className="login-form__login-input" aria-describedby="info">
                             {this.state.showEmailError ?
-                                (<span id="info" className="login-error">{commom.errors.emailError}</span>) :
+                                (<span id="info" className="login-form__login-error">{commom.errors.emailError}</span>) :
                                 (<span></span>)}
                         </div>
 
-                        <div id="pswdContainer" className="login-input">
+                        <div id="pswdContainer" className="login-form__login-input">
                             <TextField id="floating-center-title" type="password" label="Password" onChange={this.validatePwd} linedirection="center" className="md-cell md-cell--bottom" required />
                         </div>
-                        <div className="login-input" aria-describedby="info">
+                        <div className="login-form__login-input" aria-describedby="info">
                             {this.state.showPwdError ?
-                                (<p id="info" className="login-error">{commom.errors.pwdError}<br />{commom.errors.pwdError2}</p>) :
+                                (<p id="info" className="login-form__login-error">{commom.errors.pwdError}<br />{commom.errors.pwdError2}</p>) :
                                 (<span></span>)}
                         </div>
 
                         <div>
-                            <button disabled={!this.state.isValid} className="login-button w3-button w3-pink" type="submit">Login</button>
+                            <button disabled={!this.state.isValid} className="login-form__login-button w3-button w3-pink" type="submit">Login</button>
                         </div>
                     </form>
                 </div>

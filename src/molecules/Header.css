@@ -2,61 +2,62 @@
     display: grid;
     min-height: 80px;
     grid-auto-flow: column;
-    padding: 10px;
-    gap: 20px;
+    /* padding: 10px; */
+    /* gap: 20px; */
     z-index: 1;
     box-shadow: 0px 5px 5px -4px #aaaaaa;
     padding-bottom: 0px;
   }
 
-  .header-brand {
+  .app-header__header-brand {
     display: grid;
-    gap: 10px;
+    /* gap: 10px; */
     grid-auto-flow: column;
     justify-content: start;
     align-content: center;
   }
 
-  .header-basket{
+  .app-header__header-basket{
     display: grid;
     gap: 2px;
     justify-content: end;
-    align-content: center;
+    align-content: end;
   }
 
-  .header-app-links {
+  .app-header__header-app-links {
     display: grid;
     font-size: 24px;
     grid-auto-flow: column;
     justify-content: end;
-    gap: 10px;
+    /* gap: 10px; */
+    text-decoration: none;
+    margin-left: 0px;
+  }
+
+  .app-header__header-app-links:hover {
     text-decoration: none;
   }
 
-  .header-app-links:hover {
+  .app-header__header-links:hover {
     text-decoration: none;
   }
 
-  .header-links:hover {
-    text-decoration: none;
-  }
-
-  .header-basket-links {
+  .app-header__header-basket-links {
     display: grid;
     grid-auto-flow: column;
     justify-content: end;
     gap: 10px;
   }
 
-  .reg-links {
+  .app-header__reg-links {
     text-decoration: none;
   }
 
-  .reg-links:hover {
+  .app-header__reg-links:hover {
     text-decoration: none;
   }
 
-  .header-links {
+  .app-header__header-links {
     display: flex;
     margin-left: 20px;
     flex-direction: column;
@@ -64,22 +65,33 @@
     text-decoration: none;
   }
 
-  .header-basket > button img {
+  .app-header__header-basket > button img {
     height: 60px;
     width: 60px;
   }
 
-  .cart {
+  .app-header__cart {
     border: none;
     background-color: var(--background-color);
   }
 
+  .app-header__header-brand a > img {
+    height: 150px;
+    width: 280px;
+  }
+
   @media screen and (max-width: 600px) {
-    .header-brand a > img {
+    .app-header__header-brand a > img {
       height: 80px;
       width: 120px;
     }
-    .header-app-links {
-        display: none;
+    .app-header__header-app-links {
+        display: block;
+        font-size: 16px;
+        margin-top: 15px;
+    }
+    .app-header__header-basket > button img {
+      height: 40px;
+      width: 40px;
     }
   }

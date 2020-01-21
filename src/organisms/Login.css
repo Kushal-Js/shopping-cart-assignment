@@ -1,40 +1,40 @@
-.login-info {
+.login__info {
     margin-top: 40px;
-    grid-area: login-info;
+    grid-area: login__info;
 }
 
-.login-info-mob {
+.login__info-mob {
     display: none;
 }
 
-.login-form-container {
-    grid-area: login-form-container;
+.login__form-container {
+    grid-area: login__form-container;
 }
 
-.login-container {
+.login {
     display: grid;
     padding: 20px;
     /* margin: 20px; */
     justify-content: center;
     grid-template-areas: 
-    "login-info login-form-container";
+    "login__info login__form-container";
     gap: 20px;
 }
 
-.login-error {
+.login-form__login-error {
     color: red;
     font-family: "Dosis", "Arial";
     font-weight: 500;
     font-size: 14px;
 }
 
-.login-button {
+.login-form__login-button {
     background-color: var(--pink);
     width: 200px;
     color: black
 }
 
-.login-form {
+.login__login-form {
     display: grid;
     gap: 20px;
     justify-content: stretch;
@@ -51,19 +51,10 @@
   }
 
   @media screen and (max-width: 600px) {
-    .login-info {
+    .login__info {
         display: none;
     }
-    .login-info-mob {
+    .login__info-mob {
         display: block;
     }
-    /* .login-container {
-        display: grid;
-        padding: 20px;
-        justify-content: center;
-        grid-template-areas: 
-        "login-info login-info"
-        "login-form-container login-form-container";
-        gap: 20px;
-    } */
   }

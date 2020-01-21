@@ -1,7 +1,6 @@
 
   .wrapper {
     display: grid;
-    /* grid-gap: 20px; */
     
     grid-template-areas: 
       "header"
@@ -10,12 +9,6 @@
   }
 
   @media screen and (max-width: 600px) {
-    /* #main-nav {
-        display: none;
-    }
-    #main-head {
-        display: block;
-    } */
     .wrapper {
         grid-template-columns: 5fr;
         grid-template-areas: 
@@ -25,12 +18,6 @@
   }
 
   @media only screen and (min-width: 600px)  {
-      /* #main-nav {
-          display: block;
-      }
-      #main-head {
-          display: none;
-      } */
     .wrapper {
         grid-template-columns: 1fr 4fr;
         grid-template-areas: 

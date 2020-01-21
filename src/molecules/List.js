@@ -17,15 +17,15 @@ class List extends Component {
 
     return (
 
-      <main className="list">
+      <main className="product-list__list">
         {products.map((item) => {
           return (
-            <article key={item.id} className="product-item">
-              <div className="text">
-                <h4 className="item-name">{item.name}</h4>
+            <article key={item.id} className="product-list__product-item">
+              <div className="product-item__wrapper">
+                <h4 className="product-item__item-name">{item.name}</h4>
                 <img src={`.` + item.imageURL} alt=""></img>
-                <p className="item-text-block list-item-text">{item.description}</p>
-                <div className="buy-area">
+                <p className="product-item__item-text-block">{item.description}</p>
+                <div className="product-item__buy">
                   <span>MRP Rs.{item.price}</span>
                   <CartConsumer>
                     {({ updateCart }) => (
