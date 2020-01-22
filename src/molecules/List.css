@@ -46,6 +46,25 @@
       font-size: 16px;
   }
 
+   /* Extra small devices (phones, 600px and down) */
+/* @media only screen and (max-width: 600px) {...} */
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+/* @media only screen and (min-width: 600px) {...} */
+
+/* Medium devices (landscape tablets, 768px and up) */
+/* @media only screen and (min-width: 768px) {...} */
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+  .product-item__item-text-block {
+    height: 380px;
+  }
+}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+/* @media only screen and (min-width: 1200px) {...}  */
+
   @media screen and (min-width: 1024px) {
     .product-list__list { 
       display: grid;
@@ -57,40 +76,36 @@
 
   @media screen and (max-width: 320px) {
     .product-item__item-text-block {
-      display: block;
       height: 180px;
-      margin-top: 10px;
-      margin-bottom: 10px;
-      background-color: var(--background-color)
     }
   }
 
-  @media screen and (max-width: 375px) {
+  @media screen and (min-width: 425px) {
     .product-item__item-text-block {
-      display: block;
-      height: 160px;
-      margin-top: 10px;
-      margin-bottom: 10px;
-      background-color: var(--background-color)
+      height: 340px;
     }
   }
 
-  @media screen and (max-width: 768px) {
+  @media screen and (min-width: 768px) {
     .product-item__item-text-block {
-      display: block;
-      height: 190px;
-      margin-top: 10px;
-      margin-bottom: 10px;
-      background-color: var(--background-color)
+      height: 210px;
     }
   }
 
-  @media screen and (max-width: 1440px) {
+  @media screen and (min-width: 1024px) {
     .product-item__item-text-block {
-      display: block;
-      height: 300px;
-      margin-top: 10px;
-      margin-bottom: 10px;
-      background-color: var(--background-color)
+      height: 350px;
+    }
+  }
+
+  @media screen and (min-width: 1440px) {
+    .product-item__item-text-block {
+      height: 230px;
+    }
+  }
+
+  @media screen and (min-width: 2560px) {
+    .product-item__item-text-block {
+      height: 120px;
     }
   }

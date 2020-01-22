@@ -22,6 +22,7 @@
     gap: 2px;
     justify-content: end;
     align-content: end;
+    margin-right: 3px;
   }
 
   .app-header__header-app-links {
