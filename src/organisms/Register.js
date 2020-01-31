@@ -97,7 +97,7 @@ class Login extends Component {
           <span className="register-text"><h2>Signup</h2></span>
           <span>We don not share your personal details with anyone.</span>
         </div>
-          <form action="/home" className="register__register-form">
+          <form action="/home" method="post" className="register__register-form">
             <div id="firstNameContainer">
               <TextField id="floating-center-title" label="First Name" linedirection="center" className="md-cell md-cell--bottom" required />
             </div>

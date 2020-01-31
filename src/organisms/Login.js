@@ -73,7 +73,7 @@ class Login extends Component {
                     <h2>Login</h2>
                     <span>Get access to your Orders, Wishlist and Recommendations</span>
                 </div>
-                    <form action="/home" className="login__login-form">
+                    <form action="/home" method="post" className="login__login-form">
                         <div id="emailContainer" className="login-form__login-input">
                             <TextField id="floating-center-title" label="Email" onChange={this.validateEmail} linedirection="center" className="md-cell md-cell--bottom" required />
                         </div>
