@@ -1,7 +1,6 @@
 .corousel-justifier {
-  padding: 20px;
-  border-bottom: 1px solid #ccc;
-  box-shadow: 0px 5px 5px -4px #aaaaaa;
+  padding: 1.25rem;
+  box-shadow: 0rem 2.5rem 3.5rem -4.5rem #000000;
 }
 .home {
     display: grid;
@@ -16,6 +15,9 @@
   display: grid;
   grid-template-columns: auto auto;
   gap: 10px;
+  margin: 0.625rem;
+  padding: 0.625rem;
+  box-shadow: 0rem 2.5rem 3.5rem -4.5rem #000000;
 }
 
 .category__image {
@@ -36,13 +38,6 @@
   text-align: center;
 }
 
-.home > article {
-    border-bottom: 1px solid #ccc;
-    box-shadow: 0px 5px 5px -4px #aaaaaa;
-    padding: 5px;
-    margin: 5px;
-  }
-  
   .home > article img {
     width: 300px;
     height: 250px;
@@ -54,14 +49,14 @@
       height: 140px;
       margin: 10px;
     }
-    .home > article {
+    .home__category {
       margin: 10px;
     }
     .category__description-wrapper {
       margin: 10px;
       padding: 5px;
       font-family: "Dosis", "Arial";
-      font-weight: 600;
+      font-weight: 500;
       font-size: 14px;
     }
     .category__description-wrapper p {
@@ -74,12 +69,12 @@
       width: 110px;
       height: 100px;
     }
-    .home > article {
+    .home__category {
       margin: 10px;
     }
     .category__description-wrapper {
       font-family: "Dosis", "Arial";
-      font-weight: 600;
+      font-weight: 500;
       font-size: 12px;
       text-align: center;
     }

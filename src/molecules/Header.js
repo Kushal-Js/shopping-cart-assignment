@@ -6,6 +6,34 @@ import './Header.css';
 
 class Header extends Component {
 
+    openCart() {
+        var y = document.getElementById("overlayCart");
+        var domBody = document.getElementsByTagName("body");
+
+        if (y.style.display === "" || y.style.display === "none") {
+            y.style.display = "block";
+            domBody[0].style.overflow = "hidden";
+            domBody[0].style.position = "fixed";
+            return;
+        } 
+        if (y.style.display === "block") {
+            y.style.display = "none";
+            domBody[0].style.overflow = "auto";
+            domBody[0].style.position = "absolute";
+          } 
+      } 
+
+      cancelCart() {
+        var y = document.getElementById("overlayCart");
+        var domBody = document.getElementsByTagName("body");
+
+        if (y.style.display === "block") {
+            y.style.display = "none";
+            domBody[0].style.overflow = "";
+            domBody[0].style.position = "";
+          } 
+      }
+
     render() {
         return (
             <header role="banner" className="app-header">
@@ -15,18 +43,18 @@ class Header extends Component {
                     </Link>
 
                     <div className="app-header__header-app-links">
-                        <Link role="navigation" to="/home" className="app-header__header-links"><b>Home</b></Link>
-                        <Link role="navigation" to="/products" className="app-header__header-links"><b>Products</b></Link>
+                        <Link role="navigation" to="/home" onClick={this.cancelCart.bind(this)} className="app-header__header-links">Home</Link>
+                        <Link role="navigation" to="/products" onClick={this.cancelCart.bind(this)} className="app-header__header-links">Products</Link>
                     </div>
                 </div>
 
                 <div className="app-header__header-basket">
                     <div className="app-header__header-basket-links">
-                        <Link role="navigation" to="/login" className="app-header__reg-links">SignIn</Link>
+                        <Link role="navigation" to="/login" onClick={this.cancelCart.bind(this)} className="app-header__reg-links">SignIn</Link>
                         <Link role="navigation" to="/register" className="app-header__reg-links">Register</Link>
                     </div>
-                    <button className="app-header__cart">
-                        <img src="./static/images/cart.svg" alt="Sabka Bazaar Cart" data-toggle="modal" data-target="#myModal"></img>
+                    <button className="app-header__cart" onClick={this.cancelCart.bind(this)} onClick={this.openCart.bind(this)}>
+                        <img src="./static/images/cart.svg" alt="Sabka Bazaar Cart"></img>
                         <CartConsumer>
                             {({ cart }) => (
                                 <span>{cart.length + ` items`}</span>
@@ -34,7 +62,7 @@ class Header extends Component {
                         </CartConsumer>
                     </button>
                 </div>
-                <Cart />
+                    <Cart />
             </header>
         );
     }

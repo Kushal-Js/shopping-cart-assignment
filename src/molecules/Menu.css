@@ -9,6 +9,7 @@
     border: none;
     height: 30px;
     width: 100%;
+    margin-top: 0.725rem;
   }
 
   .app__menu-mobile-brand {
@@ -29,7 +30,7 @@
 
   .app__main-nav li {
     list-style-type: none;
-    background-color: rgb(211, 97, 116);
+    /* background-color: rgb(211, 97, 116); */
 }
 
   .app__main-nav ul li {

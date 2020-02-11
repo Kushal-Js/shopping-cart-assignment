@@ -42,16 +42,34 @@ class Cart extends Component {
         
     }
 
+    closeCart() {
+        var y = document.getElementById("overlayCart");
+        var domBody = document.getElementsByTagName("body");
+
+        if (y.style.display === "" || y.style.display === "none") {
+            y.style.display = "block";
+            domBody[0].style.overflow = "hidden";
+            domBody[0].style.position = "fixed";
+            return;
+        } 
+        if (y.style.display === "block") {
+            y.style.display = "none";
+            domBody[0].style.overflow = "";
+            domBody[0].style.position = "";
+          } 
+      } 
+
     render() {
         return (
 
-            <div role="dialog" className="modal fade" id="myModal">
-                <div className="modal-dialog modal-dialog-centered">
-                    <div className="modal-content">
+            <div className="overlay" id="overlayCart">
+            <div role="dialog" className="cart-container"  id="myCart" aria-modal="true">
+                <div className="">
+                    <div className="">
 
 
                         <div tabIndex="1" className="modal-header" id="cart-header">
-                            <h4 className="modal-title text-white"><b>My Cart</b>
+                            <h4 className="modal-title"><b>My Cart</b>
                                 <CartConsumer>
                                     {({ cart }) => (
                                         (cart.length > 0) ?
@@ -60,8 +78,8 @@ class Cart extends Component {
                                     )}
                                 </CartConsumer>
                             </h4>
-                            <button ref={this.myRef} type="button" className="cart__close-button" data-dismiss="modal">
-                                <i className="fa fa-window-close cart__close-icon"></i>
+                            <button type="button" ref={this.myRef} className="cart__close-button" aria-label="Close Cart" onClick={this.closeCart.bind(this)}>
+                                <span aria-hidden="true">&times;</span>
                             </button>
                         </div>
 
@@ -82,11 +100,15 @@ class Cart extends Component {
                                                                 </div>
 
                                                                 <div>
-                                                                    <h3 className="cart__cart-item-text">{item.value.name}</h3>
+                                                                    <h5 className="cart__cart-item-text">{item.value.name}</h5>
                                                                     <div className="cart__cart-item-quantity-box">
-                                                                        <button className="cart__cart-item-action-button w3-pink" onClick={() => this.reduceItem(item)}><i className="cart-icon fa fa-minus"></i></button>
-                                                                         {item.count} <button className="cart__cart-item-action-button w3-pink" onClick={() => this.increaseItem(item)}><i className="cart-icon fa fa-plus"></i></button>
-                                                                         <i className="fa fa-times" aria-hidden="true"></i>
+                                                                        <button className="cart__cart-item-action-button w3-pink" onClick={() => this.reduceItem(item)} aria-label={`Click to decrease the quantity`}>
+                                                                            <span className="cart-icon">-</span>
+                                                                            </button>
+                                                                         {item.count} <button className="cart__cart-item-action-button w3-pink" onClick={() => this.increaseItem(item)} aria-label={`Click to increase the quantity`}>
+                                                                             <span className="cart-icon">+</span>
+                                                                             </button>
+                                                                         <span className="cart-icon-black">x</span>
                                                                          Rs.{item.value.price}
                                                                     </div>
                                                                 </div>
@@ -98,12 +120,15 @@ class Cart extends Component {
                                                         )
 
                                                     })
+                                                    
                                                 )}
                                             </CartConsumer>
+                                            
                                             <div className="cart__lowest-offer">
                                                 <img src="./static/images/lowest-price.png" alt=""></img>
                                                 <span>You won't find it cheaper anywhere</span>
                                             </div>
+
                                         </div>)
                                     : (
                                         <div className="modal-body-empty">
@@ -124,15 +149,15 @@ class Cart extends Component {
                                     (<div className="modal-footer">
                                         <span>Promo code can be applied on payment page</span>
 
-                                        <button className="cart__btn-checkout w3-button w3-pink" data-dismiss="modal" onKeyDown={this.checkFocus}>
-                                            <span className="cart__btn-checkout-message">Proceed to checkout</span>
-                                            <span className="cart__btn-checkout-amount">{`Rs${getGrossTotal()}   >`}</span>
+                                        <button className="cart__btn-checkout w3-button w3-pink" onClick={this.closeCart.bind(this)} data-dismiss="modal" onKeyDown={this.checkFocus}>
+                                            <span className="cart__btn-checkout-message">&nbsp;&nbsp;Proceed to checkout</span>
+                                            <span className="cart__btn-checkout-amount">{`Rs${getGrossTotal()}`}&nbsp;&nbsp;&nbsp;>&nbsp;&nbsp;</span>
                                         </button>
 
                                     </div>)
                                     : (
                                         <div className="modal-footer">
-                                            <button type="button" className="btn w3-button w3-pink" data-dismiss="modal" onKeyDown={this.checkFocus}>
+                                            <button type="button" onClick={this.closeCart.bind(this)} className="cart__btn-start-shopping btn w3-button w3-pink" data-dismiss="modal" onKeyDown={this.checkFocus}>
                                                 Start Shopping</button>
                                         </div>
                                     )
@@ -141,6 +166,7 @@ class Cart extends Component {
 
                     </div>
                 </div>
+            </div>
             </div>
 
         );

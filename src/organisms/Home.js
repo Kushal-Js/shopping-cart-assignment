@@ -53,7 +53,8 @@ class Home extends Component {
                   <div className="category__description-wrapper">
                     <h5>{item.name}</h5>
                     <p>{item.description}</p>
-                    <button role="navigation" onClick={() => this.navigate(item.id)} className="w3-button w3-pink" type="button">{`Explore ` + item.name}</button>
+                    <button role="navigation" onClick={() => this.navigate(item.id)} className="w3-button w3-pink" type="button" aria-label={`Explore ` + item.name}>
+                      {`Explore ` + item.name}</button>
                   </div>
                 </article>
               )
@@ -64,7 +65,8 @@ class Home extends Component {
                   <div className="category__description-wrapper">
                     <h5>{item.name}</h5>
                     <p>{item.description}</p>
-                    <button role="navigation" onClick={() => this.navigate(item.id)} className="w3-button w3-pink" type="button">{`Explore ` + item.name}</button>
+                    <button role="navigation" onClick={() => this.navigate(item.id)} className="w3-button w3-pink" type="button" aria-label={`Explore ` + item.name}>
+                      {`Explore ` + item.name}</button>
                   </div>
                   <img className="category__image" src={`.` + item.imageUrl} alt=""></img>
                 </article>

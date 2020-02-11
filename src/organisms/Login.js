@@ -68,36 +68,31 @@ class Login extends Component {
                     <span>Get access to your Orders, Wishlist and Recommendations</span>
                 </div>
 
-                <div className="login__form-container">
-                <div className="login__info-mob">
-                    <h2>Login</h2>
-                    <span>Get access to your Orders, Wishlist and Recommendations</span>
-                </div>
-                    <form action="/home" method="post" className="login__login-form">
-                        <div id="emailContainer" className="login-form__login-input">
-                            <TextField id="floating-center-title" label="Email" onChange={this.validateEmail} linedirection="center" className="md-cell md-cell--bottom" required />
-                        </div>
-                        <div className="login-form__login-input" aria-describedby="info">
-                            {this.state.showEmailError ?
-                                (<span id="info" className="login-form__login-error">{commom.errors.emailError}</span>) :
-                                (<span></span>)}
-                        </div>
+                <form action="/home" method="post" className="login__login-form">
+                    <div id="emailContainer">
+                        <TextField id="floating-center-title" label="Email" onChange={this.validateEmail} linedirection="center" className="md-cell md-cell--bottom login-form__login-input" required />
+                    </div>
+                    <div className="login-form__login-input" aria-describedby="info">
+                        {this.state.showEmailError ?
+                            (<span id="info" className="login-form__login-error">{commom.errors.emailError}</span>) :
+                            (<span></span>)}
+                    </div>
 
-                        <div id="pswdContainer" className="login-form__login-input">
-                            <TextField id="floating-center-title" type="password" label="Password" onChange={this.validatePwd} linedirection="center" className="md-cell md-cell--bottom" required />
-                        </div>
-                        <div className="login-form__login-input" aria-describedby="info">
-                            {this.state.showPwdError ?
-                                (<p id="info" className="login-form__login-error">{commom.errors.pwdError}<br />{commom.errors.pwdError2}</p>) :
-                                (<span></span>)}
-                        </div>
+                    <div id="pswdContainer">
+                        <TextField id="floating-center-title" type="password" label="Password" onChange={this.validatePwd} linedirection="center" className="md-cell md-cell--bottom login-form__login-input" required />
+                    </div>
+                    <div className="login-form__login-input" aria-describedby="info">
+                        {this.state.showPwdError ?
+                            (<span id="info" className="login-form__login-error">{commom.errors.pwdError}</span>) :
+                            (<span></span>)}
+                    </div>
 
-                        <div>
-                            <button disabled={!this.state.isValid} className="login-form__login-button w3-button w3-pink" type="submit">Login</button>
-                        </div>
-                    </form>
-                </div>
+                    <div>
+                        <button disabled={!this.state.isValid} className="login-form__login-button w3-button w3-pink" type="submit">Login</button>
+                    </div>
+                </form>
 
+                <div></div>
             </div>
         )
     }

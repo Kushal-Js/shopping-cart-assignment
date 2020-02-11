@@ -6,7 +6,7 @@ class Footer extends Component {
   render() {
     return (
 
-      <footer role="contentinfo" id="sticky-footer" className="bg-light">
+      <footer role="contentinfo" id="sticky-footer">
         <div className="container footer-text">
           <span className="footer-text-body">{commom.text.footerText}</span>
         </div>

@@ -1,10 +1,10 @@
+footer {
+    background-color: var(--background-color);
+}
 .footer-text {
     display: flex;
+    padding: 0.625rem;
 }
 .footer-text-body {
-    margin: auto;
-    font-family: "Dosis", "Arial";
-    font-weight: 400;
-    font-size: 12px;
-    text-align: center;
+    font-size: 14px;
 }
