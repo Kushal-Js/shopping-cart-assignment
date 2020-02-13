@@ -1,20 +1,19 @@
 .app__main-head {
     background-color: rgb(211, 97, 116);
-    /* padding: 10px; */
     grid-area: header;
   }
 
   .app__mobile-menu {
     background-color: rgb(211, 97, 116);
     border: none;
-    height: 30px;
+    height: 1.875rem;
     width: 100%;
     margin-top: 0.725rem;
   }
 
   .app__menu-mobile-brand {
       display: grid;
-      margin-left: 10px;
+      margin-left: 0.625rem;
       grid-template-columns: auto auto;  /* grid has two columns; content defines width */
       justify-content: space-between;    /* horizontal alignment of grid tracks */
       align-content: space-between;      /* vertical alignment of grid tracks */
@@ -30,16 +29,15 @@
 
   .app__main-nav li {
     list-style-type: none;
-    /* background-color: rgb(211, 97, 116); */
 }
 
   .app__main-nav ul li {
-    padding: 10px;
+    padding: 0.625rem;
     border-bottom: 1px solid black;
   }
 
   .app__main-nav-links {
-    padding: 10px;
+    padding: 0.625rem;
     text-decoration: none;
   }
 
