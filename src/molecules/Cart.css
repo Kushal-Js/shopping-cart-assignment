@@ -144,7 +144,7 @@
     outline: none;
   }
 
-  button:focus {outline:0;}
+  /* button:focus {outline:0;} */
   
   .cart-icon-black {
     margin-bottom: 0.38rem;

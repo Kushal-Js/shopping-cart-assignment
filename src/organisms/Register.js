@@ -102,7 +102,7 @@ class Login extends Component {
             <div id="emailContainer">
               <TextField id="floating-center-title" label="Email" onChange={this.validateEmail} linedirection="center" className="md-cell md-cell--bottom register-form__register-input" required />
             </div>
-            <div aria-describedby="info">
+            <div aria-describedby="info" aria-live="assertive" aria-relevant="additions removals">
               {this.state.showEmailError ?
                 (<span id="info" className="register-form__register-error">{commom.errors.emailError}</span>) :
                 (<span></span>)}
@@ -111,7 +111,7 @@ class Login extends Component {
             <div id="pswdContainer">
               <TextField id="floating-center-title" label="Password" type="password" onChange={this.validatePwd} linedirection="center" className="md-cell md-cell--bottom register-form__register-input" required />
             </div>
-            <div aria-describedby="info">
+            <div aria-describedby="info" aria-live="assertive" aria-relevant="additions removals">
               {this.state.showPwdError ?
                 (<span id="info" className="register-form__register-error">{commom.errors.pwdError}</span>) :
                 (<span></span>)}
@@ -120,7 +120,7 @@ class Login extends Component {
             <div id="confPswdContainer">
               <TextField id="floating-center-title" label="Confirm Password" type="password" onChange={this.validateCnfPwd} linedirection="center" className="md-cell md-cell--bottom register-form__register-input" required />
             </div>
-            <div aria-describedby="info">
+            <div aria-describedby="info" aria-live="assertive" aria-relevant="additions removals">
               {this.state.showCnfPwdError ?
                 (<span id="info" className="register-form__register-error">{commom.errors.cnfPwdError}</span>) :
                 (<span></span>)}

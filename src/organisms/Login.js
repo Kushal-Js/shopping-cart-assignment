@@ -72,18 +72,20 @@ class Login extends Component {
                     <div id="emailContainer">
                         <TextField id="floating-center-title" label="Email" onChange={this.validateEmail} linedirection="center" className="md-cell md-cell--bottom login-form__login-input" required />
                     </div>
-                    <div className="login-form__login-input" aria-describedby="info">
+                    <div className="login-form__login-input" aria-describedby="info"  aria-live="assertive" aria-relevant="additions removals">
                         {this.state.showEmailError ?
-                            (<span id="info" className="login-form__login-error">{commom.errors.emailError}</span>) :
+                            (<span id="info" className="login-form__login-error">
+                                {commom.errors.emailError}</span>) :
                             (<span></span>)}
                     </div>
 
                     <div id="pswdContainer">
                         <TextField id="floating-center-title" type="password" label="Password" onChange={this.validatePwd} linedirection="center" className="md-cell md-cell--bottom login-form__login-input" required />
                     </div>
-                    <div className="login-form__login-input" aria-describedby="info">
+                    <div className="login-form__login-input" aria-describedby="info"  aria-live="assertive" aria-relevant="additions removals">
                         {this.state.showPwdError ?
-                            (<span id="info" className="login-form__login-error">{commom.errors.pwdError}</span>) :
+                            (<span id="info" className="login-form__login-error">
+                                {commom.errors.pwdError}</span>) :
                             (<span></span>)}
                     </div>
 
