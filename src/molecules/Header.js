@@ -42,17 +42,17 @@ class Header extends Component {
                         <img srcSet="./static/images/logo_2x.png, ./static/images/logo.png" alt="Sabka Bazaar"></img>
                     </Link>
 
-                    <div className="app-header__header-app-links">
+                    <nav className="app-header__header-app-links">
                         <Link role="navigation" to="/home" onClick={this.cancelCart.bind(this)} className="app-header__header-links">Home</Link>
                         <Link role="navigation" to="/products" onClick={this.cancelCart.bind(this)} className="app-header__header-links">Products</Link>
-                    </div>
+                    </nav>
                 </div>
 
                 <div className="app-header__header-basket">
-                    <div className="app-header__header-basket-links">
+                    <nav className="app-header__header-basket-links">
                         <Link role="navigation" to="/login" onClick={this.cancelCart.bind(this)} className="app-header__reg-links">SignIn</Link>
                         <Link role="navigation" to="/register" className="app-header__reg-links">Register</Link>
-                    </div>
+                    </nav>
                     <button className="app-header__cart" onClick={this.cancelCart.bind(this)} onClick={this.openCart.bind(this)}>
                         <img src="./static/images/cart.svg" alt="Sabka Bazaar Cart"></img>
                         <CartConsumer>
