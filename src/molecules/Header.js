@@ -6,6 +6,13 @@ import './Header.css';
 
 class Header extends Component {
 
+    constructor(props) {
+        super(props)
+        this.state = {
+          width: 0
+        }
+      }
+
     openCart() {
         var y = document.getElementById("overlayCart");
         var domBody = document.getElementsByTagName("body");
@@ -18,8 +25,8 @@ class Header extends Component {
         } 
         if (y.style.display === "block") {
             y.style.display = "none";
-            domBody[0].style.overflow = "auto";
-            domBody[0].style.position = "absolute";
+            domBody[0].style.overflow = "";
+            domBody[0].style.position = "";
           } 
       } 
 
@@ -34,9 +41,25 @@ class Header extends Component {
           } 
       }
 
+      componentDidMount() {
+        this.updateWindowDimensions();
+        window.addEventListener("resize", this.updateWindowDimensions);
+      }
+
+      updateWindowDimensions = () => {
+        this.setState({ width: window.innerWidth, height: window.innerHeight });
+    }
+
     render() {
+        const styles = {
+            containerStyle: {
+                maxWidth: this.state.width,
+                minWidth: this.state.width
+            }
+          };
+          const { containerStyle } = styles;
         return (
-            <header role="banner" className="app-header">
+            <header role="banner" className="app-header" style={containerStyle}>
                 <div className="app-header__header-brand">
                     <Link role="navigation" to="/home">
                         <img srcSet="./static/images/logo_2x.png, ./static/images/logo.png" alt="Sabka Bazaar"></img>
@@ -51,9 +74,9 @@ class Header extends Component {
                 <div className="app-header__header-basket">
                     <nav className="app-header__header-basket-links">
                         <Link role="navigation" to="/login" onClick={this.cancelCart.bind(this)} className="app-header__reg-links">SignIn</Link>
-                        <Link role="navigation" to="/register" className="app-header__reg-links">Register</Link>
+                        <Link role="navigation" to="/register" onClick={this.cancelCart.bind(this)} className="app-header__reg-links">Register</Link>
                     </nav>
-                    <button className="app-header__cart" onClick={this.cancelCart.bind(this)} onClick={this.openCart.bind(this)}>
+                    <button className="app-header__cart" onClick={this.openCart.bind(this)}>
                         <img src="./static/images/cart.svg" alt="Sabka Bazaar Cart"></img>
                         <CartConsumer>
                             {({ cart }) => (
@@ -62,7 +85,7 @@ class Header extends Component {
                         </CartConsumer>
                     </button>
                 </div>
-                    <Cart />
+                <Cart />
             </header>
         );
     }

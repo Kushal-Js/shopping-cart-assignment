@@ -6,6 +6,8 @@
     z-index: 2;
     box-shadow: 0 .2rem .2rem #efefef;
     padding-bottom: 0rem;
+    /* width: fit-content; */
+    position: relative;
   }
 
   .app-header__header-brand {
@@ -21,7 +23,7 @@
     gap: 0.125rem;
     justify-content: end;
     align-content: end;
-    margin-right: 0.400rem;
+    margin-right: 1rem;
   }
 
   .app-header__header-app-links {
@@ -31,6 +33,7 @@
     justify-content: end;
     text-decoration: none;
     margin-left: 6.25rem;
+    
     margin-bottom: 1rem;
   }
 
@@ -49,6 +52,7 @@
     gap: 0.625rem;
     padding-bottom: 0.625rem;
     margin-bottom: 0.625rem;
+    margin-right: 0.625rem;
   }
 
   .app-header__reg-links {

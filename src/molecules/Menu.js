@@ -92,28 +92,6 @@ class MobileMenu extends Component {
         }
 
         return (
-            // <div className="app__main-head">
-            //     <div id="app__menu-mobile">
-            //         <div className="app__menu-mobile-brand">
-            //             <Link to="/products" role="navigation" className="items" title={firstCat} onClick={() => this.props.simplifiedFunction(firstCat.id)}>{firstCat.name}</Link>
-            //             <i className="fa fa-angle-down icon" data-toggle="collapse" data-target="#navbarCollapse"> </i>
-            //         </div>
-
-            //         <div className="collapse navbar-collapse" id="navbarCollapse">
-            //             <ul className="navbar-nav">
-            //                 {slicedCats.map((item) => {
-            //                     return (
-            //                         <li key={item.key}>
-            //                             <Link to="/products" role="navigation" title={item.name} className="app__main-nav-links" onClick={() => this.props.simplifiedFunction(item.id)}>
-            //                                 {item.name}</Link>
-            //                         </li>
-            //                     )
-            //                 })}
-            //             </ul>
-            //         </div>
-            //     </div>
-
-            // </div>
             <select className="app__mobile-menu" onChange={this.setMobileProductList.bind(this)}>
                 <option value="default" selected>Select Option</option>
                 {categories.map((item) => {

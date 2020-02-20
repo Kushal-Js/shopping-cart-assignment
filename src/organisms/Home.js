@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { withRouter } from "react-router-dom";
 import axios from 'axios';
-// import ImageSlider from '../components/ImageSlider';
+import { Link } from "react-router-dom";
 import ControlledCarousel from '../molecules/Corousel';
 import { CategoryContext } from '../shared/category-context';
 import './Home.css';
@@ -14,7 +14,7 @@ class Home extends Component {
     this.state = {
       categories: []
     }
-    this.navigate = this.navigate.bind(this);
+    // this.navigate = this.navigate.bind(this);
   }
 
   componentDidMount() {
@@ -25,6 +25,7 @@ class Home extends Component {
     } else {
       this.setState({ categories: categories });
     }
+    window.addEventListener("resize", this.refetchPageData);
   }
 
   getList = () => {
@@ -36,25 +37,35 @@ class Home extends Component {
       })
   }
 
+  refetchPageData = () => {
+    const user = this.context;
+    const categories = user.categories;
+    if (user.categories.length === 0) {
+      this.getList();
+    } else {
+      this.setState({ categories: categories });
+    }
+}
+
   render() {
     const { categories } = this.state;
 
     return (
-      <div>
-        <article className="corousel-justifier">
+      <main>
+        <section className="corousel-justifier">
           <ControlledCarousel />
-        </article>
-        <div className="home">
+        </section>
+        <section className="home">
           {categories.map((item, index) => {
             if (index % 2 === 0) {
               return (
                 <article key={item.key} className="home__category">
                   <img className="category__image" src={`.` + item.imageUrl} alt=""></img>
                   <div className="category__description-wrapper">
-                    <h5>{item.name}</h5>
+                    <h2>{item.name}</h2>
                     <p>{item.description}</p>
-                    <button role="navigation" onClick={() => this.navigate(item.id)} className="w3-button w3-pink" type="button" aria-label={`Explore ` + item.name}>
-                      {`Explore ` + item.name}</button>
+                    <Link role="navigation" to={{ pathname: '/products', state: { catId: item.id } }} className="w3-button w3-pink" aria-label={`Explore ` + item.name}>
+                      {`Explore ` + item.name}</Link>
                   </div>
                 </article>
               )
@@ -63,10 +74,10 @@ class Home extends Component {
               return (
                 <article key={item.key} className="home__category">
                   <div className="category__description-wrapper">
-                    <h5>{item.name}</h5>
+                    <h2>{item.name}</h2>
                     <p>{item.description}</p>
-                    <button role="navigation" onClick={() => this.navigate(item.id)} className="w3-button w3-pink" type="button" aria-label={`Explore ` + item.name}>
-                      {`Explore ` + item.name}</button>
+                    <Link role="navigation" to={{ pathname: '/products', state: { catId: item.id } }} className="w3-button w3-pink" aria-label={`Explore ` + item.name}>
+                      {`Explore ` + item.name}</Link>
                   </div>
                   <img className="category__image" src={`.` + item.imageUrl} alt=""></img>
                 </article>
@@ -74,13 +85,9 @@ class Home extends Component {
             }
 
           })}
-        </div>
-      </div>
+        </section>
+      </main>
     );
-  }
-
-  navigate(catId) {
-    this.props.history.push('/products', { catId });
   }
 }
 

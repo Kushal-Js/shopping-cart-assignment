@@ -46,16 +46,16 @@ class Products extends Component {
         (
           <div className="wrapper">
             <MobileMenu simplifiedFunction={(catId) => this.simplifiedFunction(catId)} />
-            <div role="main" className="content">
+            <main role="main" className="content">
               <List products={products} />
-            </div>
+            </main>
           </div>
         ) : (
           <div className="wrapper">
             <Menu simplifiedFunction={(catId) => this.simplifiedFunction(catId)} />
-            <div role="main" className="content">
+            <main role="main" className="content">
               <List products={products} />
-            </div>
+            </main>
           </div>
         )
     );

@@ -88,19 +88,19 @@ class Login extends Component {
       <div className="register">
 
         <div className="register__info">
-          <span className="register__info-text"><h2>Signup</h2></span>
+          <span className="register__info-text"><h1>Signup</h1></span>
           <span>We don not share your personal details with anyone.</span>
         </div>
 
           <form action="/home" method="post" className="register__register-form">
             <div id="firstNameContainer">
-              <TextField id="floating-center-title" label="First Name" linedirection="center" className="md-cell md-cell--bottom register-form__register-input" required />
+              <TextField id="firstNameInput" name="firstName" label="First Name" linedirection="center" className="md-cell md-cell--bottom register-form__register-input" required />
             </div>
             <div id="lastNameContainer">
-              <TextField id="floating-center-title" label="Last Name" linedirection="center" className="md-cell md-cell--bottom register-form__register-input" required />
+              <TextField id="lastNameInput" name="lastName" label="Last Name" linedirection="center" className="md-cell md-cell--bottom register-form__register-input" required />
             </div>
             <div id="emailContainer">
-              <TextField id="floating-center-title" label="Email" onChange={this.validateEmail} linedirection="center" className="md-cell md-cell--bottom register-form__register-input" required />
+              <TextField id="emailInput" name="email" label="Email" onChange={this.validateEmail} linedirection="center" className="md-cell md-cell--bottom register-form__register-input" required />
             </div>
             <div aria-describedby="info" aria-live="assertive" aria-relevant="additions removals">
               {this.state.showEmailError ?
@@ -108,8 +108,8 @@ class Login extends Component {
                 (<span></span>)}
             </div>
 
-            <div id="pswdContainer">
-              <TextField id="floating-center-title" label="Password" type="password" onChange={this.validatePwd} linedirection="center" className="md-cell md-cell--bottom register-form__register-input" required />
+            <div id="passwordContainer">
+              <TextField id="passwordInput" name="password" label="Password" type="password" onChange={this.validatePwd} linedirection="center" className="md-cell md-cell--bottom register-form__register-input" required />
             </div>
             <div aria-describedby="info" aria-live="assertive" aria-relevant="additions removals">
               {this.state.showPwdError ?
@@ -117,8 +117,8 @@ class Login extends Component {
                 (<span></span>)}
             </div>
 
-            <div id="confPswdContainer">
-              <TextField id="floating-center-title" label="Confirm Password" type="password" onChange={this.validateCnfPwd} linedirection="center" className="md-cell md-cell--bottom register-form__register-input" required />
+            <div id="confirmPasswordContainer">
+              <TextField id="confirmPasswordInput" name="confirmPassword" label="Confirm Password" type="password" onChange={this.validateCnfPwd} linedirection="center" className="md-cell md-cell--bottom register-form__register-input" required />
             </div>
             <div aria-describedby="info" aria-live="assertive" aria-relevant="additions removals">
               {this.state.showCnfPwdError ?
@@ -126,7 +126,7 @@ class Login extends Component {
                 (<span></span>)}
             </div>
 
-            <button disabled={!this.state.isValid} className="register-form__register-button w3-button w3-pink" type="submit">Signup</button>
+            <button id="signUpButton" name="signUp" disabled={!this.state.isValid} className="register-form__register-button w3-button w3-pink" type="submit">Signup</button>
           </form>
 
       </div>

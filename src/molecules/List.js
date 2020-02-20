@@ -27,14 +27,14 @@ class List extends Component {
     const products = this.props.products;
 
     return (
-      <main className="product-list__list">
+      <section className="product-list__list">
         {products.map((item) => {
           return (
             (this.state.width > 600) ?
-              ((this.state.width < 800) ?
+              ((this.state.width < 900) ?
                 (
                   <article key={item.id} className="product-list__product-item-tab">
-                    <h4 className="product-item__item-name">{item.name}</h4>
+                    <h2 className="product-item__item-name">{item.name}</h2>
 
                     <div className="product-item__wrapper-tab">
                       <img src={`.` + item.imageURL} alt=""></img>
@@ -55,7 +55,7 @@ class List extends Component {
                 ) : (
                   <article key={item.id} className="product-list__product-item">
                     <div className="product-item__wrapper">
-                      <h4 className="product-item__item-name">{item.name}</h4>
+                      <h2 className="product-item__item-name">{item.name}</h2>
                       <img src={`.` + item.imageURL} alt=""></img>
                       <p className="product-item__item-text-block">{item.description}</p>
                       <div className="product-item__buy">
@@ -72,7 +72,7 @@ class List extends Component {
                 )
               ) : (
                 <article key={item.id} className="product-list__product-item-mob">
-                  <h4 className="product-item__item-name">{item.name}</h4>
+                  <h2 className="product-item__item-name">{item.name}</h2>
                   <div className="product-item__wrapper-mob">
 
                     <img src={`.` + item.imageURL} alt=""></img>
@@ -93,7 +93,7 @@ class List extends Component {
               )
           )
         })}
-      </main>
+      </section>
     );
   }
 

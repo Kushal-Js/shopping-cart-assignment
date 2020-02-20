@@ -64,13 +64,13 @@ class Login extends Component {
             <div className="login">
 
                 <div className="login__info">
-                    <h2>Login</h2>
+                    <h1>Login</h1>
                     <span>Get access to your Orders, Wishlist and Recommendations</span>
                 </div>
 
                 <form action="/home" method="post" className="login__login-form">
                     <div id="emailContainer">
-                        <TextField id="floating-center-title" label="Email" onChange={this.validateEmail} linedirection="center" className="md-cell md-cell--bottom login-form__login-input" required />
+                        <TextField id="emailInput" name="email" label="Email" onBlur={this.validateEmail} linedirection="center" className="md-cell md-cell--bottom login-form__login-input" required />
                     </div>
                     <div className="login-form__login-input" aria-describedby="info"  aria-live="assertive" aria-relevant="additions removals">
                         {this.state.showEmailError ?
@@ -79,8 +79,8 @@ class Login extends Component {
                             (<span></span>)}
                     </div>
 
-                    <div id="pswdContainer">
-                        <TextField id="floating-center-title" type="password" label="Password" onChange={this.validatePwd} linedirection="center" className="md-cell md-cell--bottom login-form__login-input" required />
+                    <div id="passwordContainer">
+                        <TextField id="passwordInput" name="password" type="password" label="Password" onBlur={this.validatePwd} linedirection="center" className="md-cell md-cell--bottom login-form__login-input" required />
                     </div>
                     <div className="login-form__login-input" aria-describedby="info"  aria-live="assertive" aria-relevant="additions removals">
                         {this.state.showPwdError ?
@@ -90,7 +90,7 @@ class Login extends Component {
                     </div>
 
                     <div>
-                        <button disabled={!this.state.isValid} className="login-form__login-button w3-button w3-pink" type="submit">Login</button>
+                        <button id="loginButton" name="submit" disabled={!this.state.isValid} className="login-form__login-button w3-button w3-pink" type="submit">Login</button>
                     </div>
                 </form>
 
